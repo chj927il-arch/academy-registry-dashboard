@@ -17,79 +17,52 @@ gtag('config', 'G-BDWKMQ737B');
 
 
 
-  
+
+
+ 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>기숙학원 등기부 리스크 대시보드</title>
+<title>경쟁기숙 현황 대시보드</title>
 <style>
-  /* ─── 로그인 페이지 스타일 ─── */
+
   #login-screen {
     position: fixed; inset: 0; z-index: 9999;
     background: #f5f5f3;
     display: flex; align-items: center; justify-content: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
   }
   #login-screen.hidden { display: none; }
-  .login-wrap {
-    background: #fff;
-    border: 1.5px solid #d1cfc5;
-    border-radius: 16px;
-    padding: 48px 44px 40px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    margin: 0 16px;
+  .lw {
+    background: #fff; border: 1.5px solid #d1cfc5; border-radius: 16px;
+    padding: 48px 44px 40px; width: 100%; max-width: 400px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08); margin: 0 16px; position: relative;
   }
-  .login-icon {
-    width: 48px; height: 48px;
-    background: #1e2d40;
-    border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 20px;
-    font-size: 22px;
+  .conf-mark {
+    position: absolute; top: 18px; right: 20px;
+    font-size: 12px; font-weight: 700; color: #c0392b;
+    border: 1.5px solid #c0392b; border-radius: 4px;
+    padding: 2px 8px; letter-spacing: 0.05em;
   }
-  .login-title { font-size: 20px; font-weight: 700; color: #1a1a18; margin-bottom: 6px; }
-  .login-sub { font-size: 13px; color: #6b6b67; margin-bottom: 32px; line-height: 1.5; }
-  #login-screen label { display: block; font-size: 12px; font-weight: 600; color: #4a4a47; margin-bottom: 7px; }
-  .input-wrap { position: relative; margin-bottom: 10px; }
-  #login-screen input {
-    width: 100%; padding: 11px 44px 11px 14px;
-    border: 1.5px solid #d1cfc5; border-radius: 8px;
-    font-size: 14px; color: #1a1a18; background: #fafaf8;
-    outline: none; transition: border-color .15s; font-family: inherit;
+  .li { width:48px;height:48px;background:#1e2d40;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:22px; }
+  .lt { font-size:20px;font-weight:700;color:#1a1a18;margin-bottom:6px; }
+  .ls { font-size:13px;color:#6b6b67;margin-bottom:32px;line-height:1.5; }
+  .lw label { display:block;font-size:12px;font-weight:600;color:#4a4a47;margin-bottom:7px; }
+  .iw { position:relative;margin-bottom:10px; }
+  .lw input {
+    width:100%;padding:11px 44px 11px 14px;border:1.5px solid #d1cfc5;border-radius:8px;
+    font-size:14px;color:#1a1a18;background:#fafaf8;outline:none;font-family:inherit;
+    transition:border-color .15s;
   }
-  #login-screen input:focus { border-color: #1e2d40; background: #fff; }
-  .toggle-pw {
-    position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
-    background: none; border: none; cursor: pointer; color: #9b9b96; font-size: 16px;
-  }
-  .error-msg {
-    font-size: 12px; color: #c0392b;
-    background: #fff5f5; border: 1px solid #fca5a5;
-    border-radius: 6px; padding: 8px 12px;
-    margin-bottom: 14px; display: none;
-  }
-  .error-msg.show { display: block; }
-  .btn-login {
-    width: 100%; padding: 13px;
-    background: #1e2d40; color: #fff;
-    border: none; border-radius: 8px;
-    font-size: 14px; font-weight: 600;
-    cursor: pointer; font-family: inherit;
-    transition: background .15s; margin-top: 6px;
-  }
-  .btn-login:hover { background: #2c3e55; }
-  .footer-note {
-    margin-top: 24px; font-size: 11px; color: #9b9b96;
-    text-align: center; line-height: 1.6;
-    border-top: 1px solid #e8e7e2; padding-top: 16px;
-  }
+  .lw input:focus { border-color:#1e2d40;background:#fff; }
+  .tpw { position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#9b9b96;font-size:16px; }
+  .em { font-size:12px;color:#c0392b;background:#fff5f5;border:1px solid #fca5a5;border-radius:6px;padding:8px 12px;margin-bottom:14px;display:none; }
+  .em.show { display:block; }
+  .bl { width:100%;padding:13px;background:#1e2d40;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .15s;margin-top:6px; }
+  .bl:hover { background:#2c3e55; }
+  .fn { margin-top:24px;font-size:11px;color:#9b9b96;text-align:center;line-height:1.6;border-top:1px solid #e8e7e2;padding-top:16px; }
+  #dash { display:none; }
+  #dash.show { display:block; }
 
-  /* ─── 로그인 전 대시보드 숨김 ─── */
-  #dashboard-content { display: none; }
-  #dashboard-content.show { display: block; }
-
-  /* ─── 대시보드 원본 스타일 ─── */
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -338,33 +311,29 @@ gtag('config', 'G-BDWKMQ737B');
 </head>
 <body>
 
-<!-- 로그인 화면 -->
 <div id="login-screen">
-  <div class="login-wrap">
-    <div class="login-icon">🏫</div>
-    <div class="login-title">기숙학원 등기부 대시보드</div>
-    <div class="login-sub">열람 권한이 있는 사용자만 접근 가능합니다.<br>비밀번호를 입력해 주세요.</div>
-    <label for="pw">비밀번호</label>
-    <div class="input-wrap">
-      <input type="password" id="pw" placeholder="비밀번호 입력" autofocus>
-      <button class="toggle-pw" onclick="togglePw()" type="button">👁</button>
+  <div class="lw">
+    <div class="conf-mark">대외비</div>
+    <div class="li">🏫</div>
+    <div class="lt">경쟁기숙 현황 대시보드</div>
+    <div class="ls">열람 권한이 있는 사용자만 접근 가능합니다.<br>비밀번호를 입력해 주세요.</div>
+    <label for="pwInput">비밀번호</label>
+    <div class="iw">
+      <input type="password" id="pwInput" placeholder="비밀번호 입력">
+      <button class="tpw" type="button" id="eyeBtn">👁</button>
     </div>
-    <div class="error-msg" id="errMsg">비밀번호가 올바르지 않습니다.</div>
-    <button class="btn-login" onclick="doLogin()">접속하기</button>
-    <div class="footer-note">
-      5개 학원 · 14건 등기부 분석<br>열람용 자료 — 법적 효력 없음
-    </div>
+    <div class="em" id="errMsg">비밀번호가 올바르지 않습니다.</div>
+    <button class="bl" id="loginBtn">접속하기</button>
+    <div class="fn">5개 학원 · 14건 등기부 분석<br>열람용 자료 — 대외비</div>
   </div>
 </div>
 
-<!-- 대시보드 (로그인 후 표시) -->
-<div id="dashboard-content">
-
+<div id="dash">
 <div class="page">
 
   <!-- 헤더 -->
   <div class="header">
-    <div class="header-title">기숙학원 등기부 통합 리스크 대시보드</div>
+    <div class="header-title">경쟁기숙 현황 대시보드</div>
     <div class="header-sub">총 5개 학원 · 14건 등기부 분석 &nbsp;|&nbsp; 열람기준: 2026년 4~5월 &nbsp;|&nbsp; 열람용 (법적 효력 없음)</div>
   </div>
 
@@ -842,45 +811,46 @@ gtag('config', 'G-BDWKMQ737B');
   </div>
 
 </div>
-
-
-
 </div>
-
 <script>
-  // 세션 인증 확인
+
+(function() {
+  // 이미 인증된 경우 바로 대시보드 표시
   if (sessionStorage.getItem('dash_auth') === 'ok') {
-    showDashboard();
-  }
-
-  function doLogin() {
-    var pw = document.getElementById('pw').value;
-    if (pw === 'etoossuper') {
-      sessionStorage.setItem('dash_auth', 'ok');
-      showDashboard();
-    } else {
-      document.getElementById('errMsg').classList.add('show');
-      document.getElementById('pw').value = '';
-      document.getElementById('pw').focus();
-    }
-  }
-
-  function showDashboard() {
     document.getElementById('login-screen').classList.add('hidden');
-    document.getElementById('dashboard-content').classList.add('show');
+    document.getElementById('dash').classList.add('show');
   }
 
-  function togglePw() {
-    var inp = document.getElementById('pw');
-    inp.type = inp.type === 'password' ? 'text' : 'password';
-  }
+  // 로그인 버튼
+  document.getElementById('loginBtn').addEventListener('click', function() {
+    doLogin();
+  });
 
-  // Enter 키로 로그인
-  document.getElementById('pw').addEventListener('keydown', function(e) {
+  // Enter 키
+  document.getElementById('pwInput').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') doLogin();
   });
 
-  /* ─── 대시보드 원본 스크립트 ─── */
+  // 비밀번호 보기/숨기기
+  document.getElementById('eyeBtn').addEventListener('click', function() {
+    var inp = document.getElementById('pwInput');
+    inp.type = inp.type === 'password' ? 'text' : 'password';
+  });
+
+  function doLogin() {
+    var val = document.getElementById('pwInput').value;
+    if (val === 'etoossuper') {
+      sessionStorage.setItem('dash_auth', 'ok');
+      document.getElementById('login-screen').classList.add('hidden');
+      document.getElementById('dash').classList.add('show');
+    } else {
+      document.getElementById('errMsg').classList.add('show');
+      document.getElementById('pwInput').value = '';
+      document.getElementById('pwInput').focus();
+    }
+  }
+})();
+
 
 var openState = {};
 function toggle(id) {

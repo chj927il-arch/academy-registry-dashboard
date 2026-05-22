@@ -1,31 +1,18 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<!-- 구글 태그 (gtag.js) --> 
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BDWKMQ737B"></script>
-<스크립트>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
-
-gtag('config', 'G-BDWKMQ737B');
-</스크립트>
-
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>기숙학원 등기부 리스크 대시보드</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  /* ─── 로그인 페이지 스타일 ─── */
+  #login-screen {
+    position: fixed; inset: 0; z-index: 9999;
     background: #f5f5f3;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
   }
+  #login-screen.hidden { display: none; }
   .login-wrap {
     background: #fff;
     border: 1.5px solid #d1cfc5;
@@ -34,6 +21,7 @@ gtag('config', 'G-BDWKMQ737B');
     width: 100%;
     max-width: 400px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    margin: 0 16px;
   }
   .login-icon {
     width: 48px; height: 48px;
@@ -43,31 +31,20 @@ gtag('config', 'G-BDWKMQ737B');
     margin-bottom: 20px;
     font-size: 22px;
   }
-  .login-title {
-    font-size: 20px; font-weight: 700; color: #1a1a18;
-    margin-bottom: 6px;
-  }
-  .login-sub {
-    font-size: 13px; color: #6b6b67;
-    margin-bottom: 32px; line-height: 1.5;
-  }
-  label {
-    display: block; font-size: 12px; font-weight: 600;
-    color: #4a4a47; margin-bottom: 7px;
-  }
+  .login-title { font-size: 20px; font-weight: 700; color: #1a1a18; margin-bottom: 6px; }
+  .login-sub { font-size: 13px; color: #6b6b67; margin-bottom: 32px; line-height: 1.5; }
+  #login-screen label { display: block; font-size: 12px; font-weight: 600; color: #4a4a47; margin-bottom: 7px; }
   .input-wrap { position: relative; margin-bottom: 10px; }
-  input[type="password"] {
+  #login-screen input {
     width: 100%; padding: 11px 44px 11px 14px;
     border: 1.5px solid #d1cfc5; border-radius: 8px;
     font-size: 14px; color: #1a1a18; background: #fafaf8;
-    outline: none; transition: border-color .15s;
-    font-family: inherit;
+    outline: none; transition: border-color .15s; font-family: inherit;
   }
-  input[type="password"]:focus { border-color: #1e2d40; background: #fff; }
+  #login-screen input:focus { border-color: #1e2d40; background: #fff; }
   .toggle-pw {
     position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
-    background: none; border: none; cursor: pointer; color: #9b9b96;
-    font-size: 16px; padding: 0; line-height: 1;
+    background: none; border: none; cursor: pointer; color: #9b9b96; font-size: 16px;
   }
   .error-msg {
     font-size: 12px; color: #c0392b;
@@ -82,84 +59,21 @@ gtag('config', 'G-BDWKMQ737B');
     border: none; border-radius: 8px;
     font-size: 14px; font-weight: 600;
     cursor: pointer; font-family: inherit;
-    transition: background .15s;
-    margin-top: 6px;
+    transition: background .15s; margin-top: 6px;
   }
   .btn-login:hover { background: #2c3e55; }
-  .btn-login:active { background: #141e2b; }
   .footer-note {
     margin-top: 24px; font-size: 11px; color: #9b9b96;
     text-align: center; line-height: 1.6;
     border-top: 1px solid #e8e7e2; padding-top: 16px;
   }
-</style>
-</head>
-<body>
-<div class="login-wrap">
-  <div class="login-icon">🏫</div>
-  <div class="login-title">기숙학원 등기부 대시보드</div>
-  <div class="login-sub">열람 권한이 있는 사용자만 접근 가능합니다.<br>비밀번호를 입력해 주세요.</div>
 
-  <label for="pw">비밀번호</label>
-  <div class="input-wrap">
-    <input type="password" id="pw" placeholder="비밀번호 입력"
-      onkeydown="if(event.key==='Enter') doLogin()" autofocus>
-    <button class="toggle-pw" onclick="togglePw()" type="button" id="eyeBtn">👁</button>
-  </div>
-  <div class="error-msg" id="errMsg">비밀번호가 올바르지 않습니다.</div>
-  <button class="btn-login" onclick="doLogin()">접속하기</button>
+  /* ─── 로그인 전 대시보드 숨김 ─── */
+  #dashboard-content { display: none; }
+  #dashboard-content.show { display: block; }
 
-  <div class="footer-note">
-    5개 학원 · 14건 등기부 분석<br>
-    열람용 자료 — 법적 효력 없음
-  </div>
-</div>
+  /* ─── 대시보드 원본 스타일 ─── */
 
-<script>
-function doLogin() {
-  var pw = document.getElementById('pw').value;
-  var err = document.getElementById('errMsg');
-  if (pw === 'etoossuper') {
-    sessionStorage.setItem('auth', 'ok');
-    document.body.innerHTML = getDashboard();
-    initDash();
-  } else {
-    err.classList.add('show');
-    document.getElementById('pw').value = '';
-    document.getElementById('pw').focus();
-  }
-}
-function togglePw() {
-  var inp = document.getElementById('pw');
-  inp.type = inp.type === 'password' ? 'text' : 'password';
-}
-function initDash() {
-  // 상세 패널 토글 기능 복원
-  window.openState = {};
-  window.toggle = function(id) {
-    var panel = document.getElementById('detail-' + id);
-    var card  = document.getElementById('card-' + id);
-    if (!panel) return;
-    if (openState[id]) {
-      panel.classList.remove('open');
-      if (card) card.classList.remove('active');
-      openState[id] = false;
-    } else {
-      panel.classList.add('open');
-      if (card) card.classList.add('active');
-      openState[id] = true;
-      setTimeout(function(){ panel.scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 80);
-    }
-  };
-}
-function getDashboard() {
-  return `<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>기숙학원 등기부 통합 리스크 대시보드</title>
-<style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
@@ -402,9 +316,33 @@ function getDashboard() {
     .h-card:hover { box-shadow: none; }
     .detail-panel { display: block !important; }
   }
+
 </style>
 </head>
 <body>
+
+<!-- 로그인 화면 -->
+<div id="login-screen">
+  <div class="login-wrap">
+    <div class="login-icon">🏫</div>
+    <div class="login-title">기숙학원 등기부 대시보드</div>
+    <div class="login-sub">열람 권한이 있는 사용자만 접근 가능합니다.<br>비밀번호를 입력해 주세요.</div>
+    <label for="pw">비밀번호</label>
+    <div class="input-wrap">
+      <input type="password" id="pw" placeholder="비밀번호 입력" autofocus>
+      <button class="toggle-pw" onclick="togglePw()" type="button">👁</button>
+    </div>
+    <div class="error-msg" id="errMsg">비밀번호가 올바르지 않습니다.</div>
+    <button class="btn-login" onclick="doLogin()">접속하기</button>
+    <div class="footer-note">
+      5개 학원 · 14건 등기부 분석<br>열람용 자료 — 법적 효력 없음
+    </div>
+  </div>
+</div>
+
+<!-- 대시보드 (로그인 후 표시) -->
+<div id="dashboard-content">
+
 <div class="page">
 
   <!-- 헤더 -->
@@ -888,7 +826,45 @@ function getDashboard() {
 
 </div>
 
+
+
+</div>
+
 <script>
+  // 세션 인증 확인
+  if (sessionStorage.getItem('dash_auth') === 'ok') {
+    showDashboard();
+  }
+
+  function doLogin() {
+    var pw = document.getElementById('pw').value;
+    if (pw === 'etoossuper') {
+      sessionStorage.setItem('dash_auth', 'ok');
+      showDashboard();
+    } else {
+      document.getElementById('errMsg').classList.add('show');
+      document.getElementById('pw').value = '';
+      document.getElementById('pw').focus();
+    }
+  }
+
+  function showDashboard() {
+    document.getElementById('login-screen').classList.add('hidden');
+    document.getElementById('dashboard-content').classList.add('show');
+  }
+
+  function togglePw() {
+    var inp = document.getElementById('pw');
+    inp.type = inp.type === 'password' ? 'text' : 'password';
+  }
+
+  // Enter 키로 로그인
+  document.getElementById('pw').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') doLogin();
+  });
+
+  /* ─── 대시보드 원본 스크립트 ─── */
+
 var openState = {};
 function toggle(id) {
   var panel = document.getElementById('detail-' + id);
@@ -905,11 +881,7 @@ function toggle(id) {
     setTimeout(function(){ panel.scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 80);
   }
 }
-</script>
-</body>
-</html>
-`;
-}
+
 </script>
 </body>
 </html>

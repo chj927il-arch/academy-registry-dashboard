@@ -288,6 +288,15 @@ gtag('config', 'G-BDWKMQ737B');
   .chip-gray { background: #f5f5f3; color: #6b6b67; border-color: #d1cfc5; }
   .rp-gray { background: #f5f5f3; color: #6b6b67; border-color: #d1cfc5; }
 
+  .filter-btn {
+    font-size: 12px; font-weight: 600; color: #4a4a47;
+    background: #fff; border: 1.5px solid #d1cfc5; border-radius: 99px;
+    padding: 6px 14px; cursor: pointer; transition: all .15s;
+  }
+  .filter-btn:hover { border-color: #9b9b96; background: #fafaf8; }
+  .filter-btn.active { background: #1e2d40; border-color: #1e2d40; color: #fff; }
+  .section-hidden { display: none !important; }
+
   .amount-r { color: #991b1b; }
   .amount-g { color: #166534; }
   .amount-y { color: #92400e; }
@@ -460,6 +469,19 @@ gtag('config', 'G-BDWKMQ737B');
   </div>
 
   <div class="hr"></div>
+  <div class="section-label">학원별 바로가기</div>
+  <div id="filter-bar" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+    <button class="filter-btn active" data-ac="all" onclick="filterAc('all')">전체보기</button>
+    <button class="filter-btn" data-ac="yj" onclick="filterAc('yj')">용인이강기숙</button>
+    <button class="filter-btn" data-ac="yang" onclick="filterAc('yang')">양지비상에듀</button>
+    <button class="filter-btn" data-ac="bs1" onclick="filterAc('bs1')">용인비상에듀</button>
+    <button class="filter-btn" data-ac="tc" onclick="filterAc('tc')">이천탑클래스</button>
+    <button class="filter-btn" data-ac="nas" onclick="filterAc('nas')">남안성비상에듀</button>
+    <button class="filter-btn" data-ac="ak" onclick="filterAc('ak')">아는공부기숙</button>
+    <button class="filter-btn" data-ac="dp" onclick="filterAc('dp')">덕평수련원</button>
+    <button class="filter-btn" data-ac="akj" onclick="filterAc('akj')">안동김재규학원</button>
+  </div>
+
   <div class="section-label">학원별 상세비교</div>
   <table class="compare-table">
     <thead>
@@ -474,7 +496,7 @@ gtag('config', 'G-BDWKMQ737B');
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr data-ac="yj">
         <td style="font-weight:600">용인이강기숙</td>
         <td>김훈 외 4인 공유</td>
         <td class="amount-r">170억 원</td>
@@ -483,7 +505,7 @@ gtag('config', 'G-BDWKMQ737B');
         <td><span class="chip chip-r">고위험</span></td>
         <td><button onclick="toggle('yj')" style="font-size:11px;border:1px solid #d1cfc5;border-radius:4px;padding:2px 6px;cursor:pointer;background:#f5f5f3">보기</button></td>
       </tr>
-      <tr>
+      <tr data-ac="bs1">
         <td style="font-weight:600">용인비상에듀</td>
         <td>김유일·손경옥 2인</td>
         <td class="amount-r">75억 원</td>
@@ -492,7 +514,7 @@ gtag('config', 'G-BDWKMQ737B');
         <td><span class="chip chip-r">고위험</span></td>
         <td><button onclick="toggle('bs1')" style="font-size:11px;border:1px solid #d1cfc5;border-radius:4px;padding:2px 6px;cursor:pointer;background:#f5f5f3">보기</button></td>
       </tr>
-      <tr>
+      <tr data-ac="nas">
         <td style="font-weight:600">남안성비상에듀</td>
         <td>(주)양지트윈클</td>
         <td class="amount-r">77억 원</td>
@@ -501,7 +523,7 @@ gtag('config', 'G-BDWKMQ737B');
         <td><span class="chip chip-r">고위험</span></td>
         <td><button onclick="toggle('nas')" style="font-size:11px;border:1px solid #d1cfc5;border-radius:4px;padding:2px 6px;cursor:pointer;background:#f5f5f3">보기</button></td>
       </tr>
-      <tr>
+      <tr data-ac="yang">
         <td style="font-weight:600">양지비상에듀</td>
         <td>우리자산신탁(수탁)<br><span style="color:#6b6b67;font-size:11px">실질: (주)인호</span></td>
         <td class="amount-y">없음(신탁)</td>
@@ -510,7 +532,7 @@ gtag('config', 'G-BDWKMQ737B');
         <td><span class="chip chip-p">신탁주의</span></td>
         <td><button onclick="toggle('yang')" style="font-size:11px;border:1px solid #d1cfc5;border-radius:4px;padding:2px 6px;cursor:pointer;background:#f5f5f3">보기</button></td>
       </tr>
-      <tr>
+      <tr data-ac="tc">
         <td style="font-weight:600">이천탑클래스</td>
         <td>이천시산림조합</td>
         <td class="amount-g">없음</td>
@@ -519,7 +541,7 @@ gtag('config', 'G-BDWKMQ737B');
         <td><span class="chip chip-g">담보없음</span></td>
         <td><button onclick="toggle('tc')" style="font-size:11px;border:1px solid #d1cfc5;border-radius:4px;padding:2px 6px;cursor:pointer;background:#f5f5f3">보기</button></td>
       </tr>
-      <tr>
+      <tr data-ac="ak">
         <td style="font-weight:600">아는공부기숙</td>
         <td>코리아신탁(수탁)<br><span style="color:#6b6b67;font-size:11px">실질: 임화순</span></td>
         <td class="amount-y">없음(신탁)</td>
@@ -528,7 +550,7 @@ gtag('config', 'G-BDWKMQ737B');
         <td><span class="chip chip-r">고위험</span></td>
         <td><button onclick="toggle('ak')" style="font-size:11px;border:1px solid #d1cfc5;border-radius:4px;padding:2px 6px;cursor:pointer;background:#f5f5f3">보기</button></td>
       </tr>
-      <tr>
+      <tr data-ac="dp">
         <td style="font-weight:600">덕평수련원</td>
         <td>호반써밋㈜</td>
         <td class="amount-g">없음</td>
@@ -537,7 +559,7 @@ gtag('config', 'G-BDWKMQ737B');
         <td><span class="chip chip-gray">검토중</span></td>
         <td><button onclick="toggle('dp')" style="font-size:11px;border:1px solid #d1cfc5;border-radius:4px;padding:2px 6px;cursor:pointer;background:#f5f5f3">보기</button></td>
       </tr>
-      <tr>
+      <tr data-ac="akj">
         <td style="font-weight:600">안동김재규학원</td>
         <td>학교법인백암교육재단</td>
         <td class="amount-g">없음</td>
@@ -550,8 +572,8 @@ gtag('config', 'G-BDWKMQ737B');
   </table>
 
   <!-- ① 용인 계열 -->
-  <div class="section-label">① 용인 계열 — (주)인호 / 4인 공유</div>
-  <div class="cards-grid">
+  <div class="section-label" data-group="yj,yang">① 용인 계열 — (주)인호 / 4인 공유</div>
+  <div class="cards-grid" data-group="yj,yang">
 
     <div class="h-card" id="card-yj" onclick="toggle('yj')">
       <div class="card-header">
@@ -665,8 +687,8 @@ gtag('config', 'G-BDWKMQ737B');
   </div>
 
   <!-- ② 용인 포곡 계열 -->
-  <div class="section-label">② 용인 포곡 계열 — 김유일·손경옥 공유 / 이천시산림조합</div>
-  <div class="cards-grid">
+  <div class="section-label" data-group="bs1,tc">② 용인 포곡 계열 — 김유일·손경옥 공유 / 이천시산림조합</div>
+  <div class="cards-grid" data-group="bs1,tc">
 
     <div class="h-card" id="card-bs1" onclick="toggle('bs1')">
       <div class="card-header">
@@ -779,8 +801,8 @@ gtag('config', 'G-BDWKMQ737B');
   </div>
 
   <!-- ③ 안성 계열 -->
-  <div class="section-label">③ 안성 계열 — (주)양지트윈클 소유</div>
-  <div class="cards-grid">
+  <div class="section-label" data-group="nas">③ 안성 계열 — (주)양지트윈클 소유</div>
+  <div class="cards-grid" data-group="nas">
 
     <div class="h-card" id="card-nas" onclick="toggle('nas')">
       <div class="card-header">
@@ -811,8 +833,8 @@ gtag('config', 'G-BDWKMQ737B');
   </div>
 
   <!-- ④ 화성 계열 -->
-  <div class="section-label">④ 화성 계열 — 아는공부기숙 (신탁·공매)</div>
-  <div class="cards-grid">
+  <div class="section-label" data-group="ak">④ 화성 계열 — 아는공부기숙 (신탁·공매)</div>
+  <div class="cards-grid" data-group="ak">
 
     <div class="h-card" id="card-ak" onclick="toggle('ak')">
       <div class="card-header">
@@ -872,8 +894,8 @@ gtag('config', 'G-BDWKMQ737B');
   </div>
 
   <!-- ⑤ 검토중 -->
-  <div class="section-label">⑤ 검토중 — 등기 추가확인 필요</div>
-  <div class="cards-grid">
+  <div class="section-label" data-group="dp,akj">⑤ 검토중 — 등기 추가확인 필요</div>
+  <div class="cards-grid" data-group="dp,akj">
 
     <div class="h-card" id="card-dp" onclick="toggle('dp')">
       <div class="card-header">
@@ -1052,6 +1074,27 @@ gtag('config', 'G-BDWKMQ737B');
   }
 })();
 
+
+function filterAc(id) {
+  document.querySelectorAll('.filter-btn').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.ac === id);
+  });
+  document.querySelectorAll('[data-group]').forEach(function(el) {
+    var groups = el.dataset.group.split(',');
+    el.classList.toggle('section-hidden', id !== 'all' && groups.indexOf(id) === -1);
+  });
+  document.querySelectorAll('.h-card[id^="card-"]').forEach(function(c) {
+    var cid = c.id.replace('card-', '');
+    c.classList.toggle('section-hidden', id !== 'all' && cid !== id);
+  });
+  document.querySelectorAll('.compare-table tbody tr[data-ac]').forEach(function(tr) {
+    tr.classList.toggle('section-hidden', id !== 'all' && tr.dataset.ac !== id);
+  });
+  if (id !== 'all') {
+    var card = document.getElementById('card-' + id);
+    if (card) setTimeout(function(){ card.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 50);
+  }
+}
 
 var openState = {};
 function toggle(id) {

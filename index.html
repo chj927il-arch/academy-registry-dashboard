@@ -80,7 +80,7 @@ gtag('config', 'G-BDWKMQ737B');
   .header-sub { font-size: 12px; color: #6b6b67; margin-top: 4px; }
 
   /* ── 요약 카드 ── */
-  .summary-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 28px; }
+  .summary-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-bottom: 28px; }
   .sum-card {
     background: #fff;
     border: 1.5px solid #d1cfc5;
@@ -285,6 +285,8 @@ gtag('config', 'G-BDWKMQ737B');
   .chip-y { background: #fffbeb; color: #92400e; border-color: #fcd34d; }
   .chip-g { background: #f0fdf4; color: #166534; border-color: #86efac; }
   .chip-p { background: #f5f3ff; color: #5b21b6; border-color: #c4b5fd; }
+  .chip-gray { background: #f5f5f3; color: #6b6b67; border-color: #d1cfc5; }
+  .rp-gray { background: #f5f5f3; color: #6b6b67; border-color: #d1cfc5; }
 
   .amount-r { color: #991b1b; }
   .amount-g { color: #166534; }
@@ -331,7 +333,7 @@ gtag('config', 'G-BDWKMQ737B');
   <!-- 헤더 -->
   <div class="header">
     <div class="header-title">경쟁기숙 현황 대시보드</div>
-    <div class="header-sub">총 6개 학원 · 32건 등기부 분석 &nbsp;|&nbsp; 분석시점: 2026년 4~8월 &nbsp;|&nbsp; 열람용 (법적 효력 없음)</div>
+    <div class="header-sub">총 8개 학원 · 38건 등기부 분석 (2곳 검토중) &nbsp;|&nbsp; 분석시점: 2026년 4~8월 &nbsp;|&nbsp; 열람용 (법적 효력 없음)</div>
   </div>
 
   <!-- 요약 카드 -->
@@ -360,6 +362,11 @@ gtag('config', 'G-BDWKMQ737B');
       <div class="sum-lbl">신탁등기 학원</div>
       <div class="sum-val">2곳</div>
       <span class="sum-badge sb-p">양지비상에듀 외 1</span>
+    </div>
+    <div class="sum-card" style="border-color:#d1cfc5;border-left:4px solid #9b9b96">
+      <div class="sum-lbl">검토중 학원</div>
+      <div class="sum-val">2곳</div>
+      <span class="sum-badge" style="background:#f5f5f3;color:#6b6b67;border:1px solid #d1cfc5">등기 추가확인 필요</span>
     </div>
   </div>
 
@@ -520,6 +527,24 @@ gtag('config', 'G-BDWKMQ737B');
         <td>196부지 캠코 공매 진행, 195-5부지 가처분 2건 미해결</td>
         <td><span class="chip chip-r">고위험</span></td>
         <td><button onclick="toggle('ak')" style="font-size:11px;border:1px solid #d1cfc5;border-radius:4px;padding:2px 6px;cursor:pointer;background:#f5f5f3">보기</button></td>
+      </tr>
+      <tr>
+        <td style="font-weight:600">덕평수련원</td>
+        <td>호반써밋㈜</td>
+        <td class="amount-g">없음</td>
+        <td><span class="chip chip-g">단독법인</span></td>
+        <td>등기부상 근저당·압류 없음(클린), 일부 동 등기 추가확인 필요</td>
+        <td><span class="chip chip-gray">검토중</span></td>
+        <td><button onclick="toggle('dp')" style="font-size:11px;border:1px solid #d1cfc5;border-radius:4px;padding:2px 6px;cursor:pointer;background:#f5f5f3">보기</button></td>
+      </tr>
+      <tr>
+        <td style="font-weight:600">안동김재규학원</td>
+        <td>학교법인백암교육재단</td>
+        <td class="amount-g">없음</td>
+        <td><span class="chip chip-g">단독법인</span></td>
+        <td>안동시 압류 1건 미해제(2021), 부지 29필지 중 1필지만 확인</td>
+        <td><span class="chip chip-gray">검토중</span></td>
+        <td><button onclick="toggle('akj')" style="font-size:11px;border:1px solid #d1cfc5;border-radius:4px;padding:2px 6px;cursor:pointer;background:#f5f5f3">보기</button></td>
       </tr>
     </tbody>
   </table>
@@ -816,16 +841,6 @@ gtag('config', 'G-BDWKMQ737B');
       </div>
     </div>
 
-    <div class="h-card" style="opacity:.35;pointer-events:none;cursor:default">
-      <div class="card-header">
-        <div class="card-row"><div class="card-name" style="color:#9b9b96">추가 학원 예정</div></div>
-        <div class="card-loc">추가 등기부 업로드 시 분석 가능</div>
-      </div>
-      <div class="card-body">
-        <div class="risk-text" style="color:#9b9b96">—</div>
-      </div>
-    </div>
-
   </div>
 
   <!-- 상세: 아는공부기숙 -->
@@ -852,6 +867,120 @@ gtag('config', 'G-BDWKMQ737B');
         <li><span class="hl">196부지는 캠코 공매가 실제 진행 중</span> — 계약·투자 검토 시 최우선 확인 대상, 낙찰 시 기존 임차·운영 관계 소멸 가능성 있음</li>
         <li>근저당은 전건 말소되어 담보채무 리스크는 낮으나, <b>신탁+압류+공매 조합으로 소유권 자체가 불안정</b>한 상태</li>
         <li>195-5부지는 공매는 없으나 미해결 가처분 2건이 남아있어 소유권이전 관련 소송 리스크 상존 — 신탁원부·가처분 소송 경과 확인 필수</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ⑤ 검토중 -->
+  <div class="section-label">⑤ 검토중 — 등기 추가확인 필요</div>
+  <div class="cards-grid">
+
+    <div class="h-card" id="card-dp" onclick="toggle('dp')">
+      <div class="card-header">
+        <div class="card-row">
+          <div class="card-name">덕평수련원</div>
+          <span class="risk-pill rp-gray">검토중</span>
+        </div>
+        <div class="card-loc">경기도 이천시 마장면 덕평리 704-58 외 12필지</div>
+      </div>
+      <div class="card-body">
+        <div class="meta-row">
+          <span class="tag">소유: 호반써밋㈜</span>
+          <span class="tag">단독 소유</span>
+          <span class="tag">건물 3동 확인(전체 미확인)</span>
+          <span class="tag">열람: 2026.08.19</span>
+        </div>
+        <div class="mortgage-bar-wrap">
+          <div class="bar-label"><span>유효 근저당</span><span class="bar-amount amount-g">없음 (등기부 클린)</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:3%;background:#9b9b96"></div></div>
+        </div>
+        <div class="risk-list">
+          <div class="risk-row"><div class="risk-dot" style="background:#9b9b96"></div><div class="risk-text">확보된 3개동(1·4·6동)+토지는 근저당·압류·신탁 없음(클린) — 단, 전체 동 수 대비 일부만 확인됨</div></div>
+          <div class="risk-row"><div class="risk-dot" style="background:#9b9b96"></div><div class="risk-text">2000년경 과거 근저당(7.5억)·전세권 2건 이력 있으나 모두 말소 완료</div></div>
+          <div class="risk-row"><div class="risk-dot" style="background:#9b9b96"></div><div class="risk-text">나머지 동(2·3·5동 등) 등기부 추가 확보 후 재검토 필요</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-card" id="card-akj" onclick="toggle('akj')">
+      <div class="card-header">
+        <div class="card-row">
+          <div class="card-name">안동김재규학원</div>
+          <span class="risk-pill rp-gray">검토중</span>
+        </div>
+        <div class="card-loc">경상북도 안동시 임하면 신덕리 1217 외 (산38-8 외 28필지)</div>
+      </div>
+      <div class="card-body">
+        <div class="meta-row">
+          <span class="tag">소유: 학교법인백암교육재단</span>
+          <span class="tag">단독 소유</span>
+          <span class="tag">토지 1필지만 확인</span>
+          <span class="tag">열람: 2026.08.19</span>
+        </div>
+        <div class="mortgage-bar-wrap">
+          <div class="bar-label"><span>유효 근저당</span><span class="bar-amount amount-g">없음</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:3%;background:#9b9b96"></div></div>
+        </div>
+        <div class="risk-list">
+          <div class="risk-row"><div class="risk-dot" style="background:#ef4444"></div><div class="risk-text">2021.10.1 안동시(세정과) 압류 — 현재까지 말소 기록 없음(미해제 추정)</div></div>
+          <div class="risk-row"><div class="risk-dot" style="background:#9b9b96"></div><div class="risk-text">2015·2016년에도 유사 세무 압류 2건 반복(모두 말소) — 재단 세금 관리 취약 가능성</div></div>
+          <div class="risk-row"><div class="risk-dot" style="background:#9b9b96"></div><div class="risk-text">건물 표제부상 부지 29필지 중 1필지(1217) 등기만 확보 — 나머지 필지 추가 확인 필요</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 상세: 덕평수련원 -->
+  <div class="detail-panel" id="detail-dp">
+    <div class="dp-top">
+      <div>
+        <div class="dp-title">덕평수련원 — 상세 분석 <span style="font-size:12px;font-weight:600;color:#6b6b67">(검토중 — 등기 추가확인 필요)</span></div>
+        <div class="dp-sub">경기도 이천시 마장면 덕평리 704-58 외 12필지 | 소유자: 호반써밋㈜(구 덕평관광개발㈜) 단독</div>
+      </div>
+      <button class="close-btn" onclick="toggle('dp')">닫기 ✕</button>
+    </div>
+    <div class="dp-grid">
+      <div class="dp-cell"><div class="dc-lbl">토지 (13필지)</div><div class="dc-val">덕평리 704-58 외 12필지<br>대표 토지 704-59 대지 6,713㎡</div></div>
+      <div class="dp-cell"><div class="dc-lbl">건물 (확인된 3개동)</div><div class="dc-val">제1동: 청소년수련시설 약 3,600㎡<br>제4동: 펌프장·초소 / 제6동: 수련시설(2011신축)</div></div>
+      <div class="dp-cell"><div class="dc-lbl">을구 현황</div><div class="dc-val" style="color:#166534;font-weight:700">확인된 3개동 모두<br>근저당·전세권 전건 말소</div></div>
+    </div>
+    <div class="ri-full g"><div class="ri-title">① 확인된 3개동+토지 — 현재 유효한 제한물권 없음(클린)</div><div class="ri-desc">1993년 상업은행 근저당 7.5억(2000년 말소), 전세권 2건(2006·2011년 말소) 모두 해소됨</div></div>
+    <div class="ri-full y" style="border-left-color:#9b9b96"><div class="ri-title">② 검토중 — 단지 전체 동(제2·3·5동 등) 등기부 미확보</div><div class="ri-desc">표제부상 13필지에 걸친 대규모 수련시설 단지로, 이번에 확보된 3개동 외 나머지 동의 등기부를 추가로 확보해 전체 단지 권리관계를 재검토할 필요가 있음</div></div>
+    <div class="ri-full y" style="border-left-color:#9b9b96"><div class="ri-title">③ 소유자 상호변경(2019, 덕평관광개발㈜→호반써밋㈜) — 지배구조 확인 권장</div><div class="ri-desc">대형 건설사 계열 상호로 변경된 배경 및 매각·개발 계획 여부 확인 권장</div></div>
+    <div class="summary-box" style="background:#f5f5f3;border-color:#d1cfc5">
+      <div class="sb-title" style="color:#6b6b67">종합 의견 — 검토중</div>
+      <ul>
+        <li>확보된 자료 기준으로는 <span class="hl">근저당·압류·신탁 없이 등기부상 클린</span>한 상태</li>
+        <li>다만 단지 전체 동수 대비 일부(3개동)만 확보되어 있어 <b>전체 등기부 확보 전까지 최종 판정 보류</b></li>
+        <li>추가 등기부 확보 시 재분석 예정</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 상세: 안동김재규학원 -->
+  <div class="detail-panel" id="detail-akj">
+    <div class="dp-top">
+      <div>
+        <div class="dp-title">안동김재규학원 — 상세 분석 <span style="font-size:12px;font-weight:600;color:#6b6b67">(검토중 — 등기 추가확인 필요)</span></div>
+        <div class="dp-sub">경상북도 안동시 임하면 신덕리 1217 외 | 소유자: 학교법인백암교육재단 단독</div>
+      </div>
+      <button class="close-btn" onclick="toggle('akj')">닫기 ✕</button>
+    </div>
+    <div class="dp-grid">
+      <div class="dp-cell"><div class="dc-lbl">토지 (확인 1필지)</div><div class="dc-val">신덕리 1217 학교용지 1,191㎡<br>(건물 표제부상 29필지 중 일부)</div></div>
+      <div class="dp-cell"><div class="dc-lbl">건물 (3개동)</div><div class="dc-val">기숙사동 약 3,656㎡<br>강의동 약 6,530㎡ / 평생교육원동 약 1,580㎡</div></div>
+      <div class="dp-cell"><div class="dc-lbl">을구 현황</div><div class="dc-val" style="color:#166534;font-weight:700">근저당 기록사항 없음<br>(담보권 부담 없음)</div></div>
+    </div>
+    <div class="ri-full r"><div class="ri-title">① 2021.10.1 안동시(세정과) 압류 — 말소 기록 없음</div><div class="ri-desc">지방세 체납처분으로 추정 | 2015·2016년에도 유사 압류 2건 있었으나 모두 해제됨, 이번 건은 현재까지 해제 등기 미확인</div></div>
+    <div class="ri-full y" style="border-left-color:#9b9b96"><div class="ri-title">② 검토중 — 부지 29필지 중 1필지만 등기 확보</div><div class="ri-desc">건물 표제부에 "산38-8 외 28필지"로 명시되어 있어, 실제 부지 대부분의 토지 등기부가 아직 미확보 상태 — 전체 권리관계 파악을 위해 추가 발급 필요</div></div>
+    <div class="ri-full g"><div class="ri-title">③ 근저당·전세권·신탁 이력 없음</div><div class="ri-desc">확인된 토지·건물 모두 을구 기록사항 없음(금융권 담보 리스크는 낮음)</div></div>
+    <div class="summary-box" style="background:#f5f5f3;border-color:#d1cfc5">
+      <div class="sb-title" style="color:#6b6b67">종합 의견 — 검토중</div>
+      <ul>
+        <li>금융권 담보(근저당)는 없으나 <span class="hl">2021년 안동시 압류가 현재도 유효한지 안동시청 확인 필요</span></li>
+        <li>부지 29필지 중 1필지만 확인되어 <b>전체 등기부 확보 전까지 최종 판정 보류</b></li>
+        <li>추가 등기부 확보 시 재분석 예정</li>
       </ul>
     </div>
   </div>

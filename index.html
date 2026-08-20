@@ -1160,10 +1160,10 @@ gtag('config', 'G-BDWKMQ737B');
 
 
 var ACLINKS = {
-  yj:   { home:'https://ikangedu.com/', gallery:'https://ikangedu.com/sub5.php?page=3' },
+  yj:   { home:'https://ikangedu.com/', gallery:'https://ikangedu.com/sub5.php?page=3', video:'https://www.youtube.com/channel/UCsvLQj2ZQZILKOAizeeha0Q' },
   bs1:  { home:'https://www.visanged.co.kr/', gallery:'https://www.visanged.co.kr/?module=Board&action=SiteBoard&sMode=SELECT_FORM&iBrdNo=6', video:'https://www.visanged.co.kr/?module=Board&action=SiteBoard&sMode=SELECT_FORM&iBrdNo=5' },
   nas:  { home:'http://visangedu365.com/', gallery:'http://visangedu365.com/board/index.html?id=gallrey', video:'https://youtube.com/channel/UCbfUHhYssxYSc0JpA--p4pQ', vr:'https://www.visangedu365.com/vr_ansung/', campus:'https://visangedu365.com/main/page.html?pid=268' },
-  yang: { home:'http://www.man-visang.com/', gallery:'http://www.man-visang.com/ygacad/csman/community/gallery.php?sub=5', video:'https://blog.naver.com/ev1213' },
+  yang: { home:'http://www.man-visang.com/', gallery:'http://www.man-visang.com/ygacad/csman/community/gallery.php?sub=5', video:'https://blog.naver.com/ev1213', dorm:'http://www.man-visang.com/ygacad/csman/learn/learn_03.html' },
   tc:   { home:'https://icheontopclass.imweb.me/', video:'https://www.youtube.com/channel/UCR4qiQSS55_9qmaCc-dMNkw/videos' },
   ak:   { home:'https://www.knowingstudy.co.kr/' },
   dp:   { home:'https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=7724c6e0-84b3-4937-8877-7c9f5a70184e' },
@@ -1183,6 +1183,7 @@ function linkChipsHtml(ac, compact) {
   if (!compact) {
     if (l.vr) html += chip(l.vr, '🕶️', 'VR투어');
     if (l.campus) html += chip(l.campus, '🚶', '캠퍼스 둘러보기');
+    if (l.dorm) html += chip(l.dorm, '🛏️', '기숙사환경');
   }
   return html;
 }

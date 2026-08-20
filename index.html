@@ -308,6 +308,20 @@ gtag('config', 'G-BDWKMQ737B');
   }
   .pyeong { color: #6b6b67; font-size: .9em; }
 
+  /* ── 바로가기 링크 (홈페이지/시설사진/영상) ── */
+  .link-row { display: flex; gap: 6px; flex-wrap: wrap; margin: 7px 0 2px; }
+  .link-chip {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 11px; font-weight: 600; color: #1e2d40;
+    background: #eef2f7; border: 1px solid #c8d4e0; border-radius: 99px;
+    padding: 3px 9px; text-decoration: none; cursor: pointer;
+    transition: background .15s, border-color .15s;
+  }
+  .link-chip:hover { background: #dde7f0; border-color: #9db3c8; }
+  .link-chip.disabled { color: #b5b5b0; background: #f5f5f3; border-color: #e0dfd9; cursor: default; }
+  .link-chip.compact { font-size: 13px; padding: 3px 7px; }
+  .link-td { white-space: nowrap; }
+
   .map-modal-back {
     position: fixed; inset: 0; z-index: 500;
     background: rgba(26,26,24,.55);
@@ -624,7 +638,7 @@ gtag('config', 'G-BDWKMQ737B');
     </tbody>
   </table>
   <div style="font-size:11px;color:#9b9b96;margin-top:6px;line-height:1.6">
-    ※ 면적은 확보된 등기부 표제부 기준(㎡→평 환산, 1평=3.3058㎡). *표시는 다수 필지·건물 중 일부만 확인된 수치로 실제 전체 면적과 다를 수 있습니다. 아는공부기숙은 6필지·17개동 중 1필지만 확인되어 정렬 순위가 실제 규모보다 낮게 표시될 수 있습니다. 좌석규모·숙소구성은 등기부가 아닌 각 학원 홈페이지·후기 등 외부 공개자료 기준("확인중"은 자료 미확보).
+    ※ 면적은 확보된 등기부 표제부 기준(㎡→평 환산, 1평=3.3058㎡). *표시는 다수 필지·건물 중 일부만 확인된 수치로 실제 전체 면적과 다를 수 있습니다. 아는공부기숙은 6필지·17개동 중 1필지만 확인되어 정렬 순위가 실제 규모보다 낮게 표시될 수 있습니다. 좌석규모·숙소구성은 등기부가 아닌 각 학원 홈페이지·후기 등 외부 공개자료 기준("확인중"은 자료 미확보). 바로가기(🌐홈페이지·📷시설사진·▶영상)는 각 학원 공식 사이트·유튜브 등 외부 링크이며 회색 비활성은 확인된 링크가 없는 경우입니다. 덕평수련원은 현재 학원이 아닌 청소년수련시설로 운영 중이라 홈페이지 대신 관광공사 소개 페이지로 연결됩니다.
   </div>
 
   <!-- ① 용인 계열 -->
@@ -1144,6 +1158,66 @@ gtag('config', 'G-BDWKMQ737B');
   }
 })();
 
+
+var ACLINKS = {
+  yj:   { home:'https://ikangedu.com/', gallery:'https://ikangedu.com/sub5.php?page=3' },
+  bs1:  { home:'https://www.visanged.co.kr/', gallery:'https://www.visanged.co.kr/?module=Board&action=SiteBoard&sMode=SELECT_FORM&iBrdNo=6', video:'https://www.visanged.co.kr/?module=Board&action=SiteBoard&sMode=SELECT_FORM&iBrdNo=5' },
+  nas:  { home:'http://visangedu365.com/', gallery:'http://visangedu365.com/board/index.html?id=gallrey', video:'https://youtube.com/channel/UCbfUHhYssxYSc0JpA--p4pQ' },
+  yang: { home:'http://www.man-visang.com/', gallery:'http://www.man-visang.com/ygacad/csman/community/gallery.php?sub=5', video:'https://blog.naver.com/ev1213' },
+  tc:   { home:'https://icheontopclass.imweb.me/', video:'https://www.youtube.com/channel/UCR4qiQSS55_9qmaCc-dMNkw/videos' },
+  ak:   { home:'https://www.knowingstudy.co.kr/' },
+  dp:   { home:'https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=7724c6e0-84b3-4937-8877-7c9f5a70184e' },
+  akj:  { home:'http://campus.kpa.co.kr/andong/index.html', gallery:'http://campus.kpa.co.kr/andong/html/photoAlbum.html' }
+};
+
+function linkChipsHtml(ac, compact) {
+  var l = ACLINKS[ac] || {};
+  function chip(url, icon, label) {
+    var cls = 'link-chip' + (compact ? ' compact' : '');
+    if (url) {
+      return '<a class="'+cls+'" href="'+url+'" target="_blank" rel="noopener noreferrer" title="'+label+'" onclick="event.stopPropagation()">'+icon+(compact ? '' : ' '+label)+'</a>';
+    }
+    return '<span class="'+cls+' disabled" title="'+label+' 정보 없음">'+icon+(compact ? '' : ' '+label)+'</span>';
+  }
+  return chip(l.home, '🌐', '홈페이지') + chip(l.gallery, '📷', '시설사진') + chip(l.video, '▶', '영상');
+}
+
+(function renderAcademyLinks() {
+  document.querySelectorAll('.h-card[id^="card-"]').forEach(function(c) {
+    var ac = c.id.replace('card-', '');
+    var loc = c.querySelector('.card-loc');
+    if (!loc) return;
+    var row = document.createElement('div');
+    row.className = 'link-row';
+    row.innerHTML = linkChipsHtml(ac, false);
+    loc.insertAdjacentElement('afterend', row);
+  });
+
+  document.querySelectorAll('.detail-panel[id^="detail-"]').forEach(function(p) {
+    var ac = p.id.replace('detail-', '');
+    var sub = p.querySelector('.dp-sub');
+    if (!sub) return;
+    var row = document.createElement('div');
+    row.className = 'link-row';
+    row.innerHTML = linkChipsHtml(ac, false);
+    sub.insertAdjacentElement('afterend', row);
+  });
+
+  var table = document.getElementById('compareTable');
+  if (table) {
+    var headRow = table.querySelector('thead tr');
+    var th = document.createElement('th');
+    th.style.width = '9%';
+    th.textContent = '바로가기';
+    headRow.insertBefore(th, headRow.lastElementChild);
+    table.querySelectorAll('tbody tr[data-ac]').forEach(function(tr) {
+      var td = document.createElement('td');
+      td.className = 'link-td';
+      td.innerHTML = linkChipsHtml(tr.dataset.ac, true);
+      tr.insertBefore(td, tr.lastElementChild);
+    });
+  }
+})();
 
 function openMap(addr, name) {
   document.getElementById('mapModalTitle').textContent = name + ' — 위치';

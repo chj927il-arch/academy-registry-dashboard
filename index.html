@@ -382,7 +382,7 @@ gtag('config', 'G-BDWKMQ737B');
   <!-- 헤더 -->
   <div class="header">
     <div class="header-title">기숙학원 인수고려 대상 검토 및 분석 리스트</div>
-    <div class="header-sub">총 9개 학원 · 40건 등기부 분석 (2곳 검토중) &nbsp;|&nbsp; 분석시점: 2026년 4~8월 &nbsp;|&nbsp; 열람용 (법적 효력 없음)</div>
+    <div class="header-sub">총 8개 학원 노출 · 40건 등기부 분석 (1곳 검토중, 1곳 비노출) &nbsp;|&nbsp; 분석시점: 2026년 4~8월 &nbsp;|&nbsp; 열람용 (법적 효력 없음)</div>
   </div>
 
   <!-- 요약 카드 -->
@@ -414,7 +414,7 @@ gtag('config', 'G-BDWKMQ737B');
     </div>
     <div class="sum-card" style="border-color:#d1cfc5;border-left:4px solid #9b9b96">
       <div class="sum-lbl">검토중 학원</div>
-      <div class="sum-val">2곳</div>
+      <div class="sum-val">1곳</div>
       <span class="sum-badge" style="background:#f5f5f3;color:#6b6b67;border:1px solid #d1cfc5">등기 추가확인 필요</span>
     </div>
   </div>
@@ -519,7 +519,8 @@ gtag('config', 'G-BDWKMQ737B');
     <button class="filter-btn" data-ac="nas" onclick="filterAc('nas')">남안성비상에듀</button>
     <button class="filter-btn" data-ac="ak" onclick="filterAc('ak')">아는공부기숙</button>
     <button class="filter-btn" data-ac="dp" onclick="filterAc('dp')">덕평수련원</button>
-    <button class="filter-btn" data-ac="akj" onclick="filterAc('akj')">안동김재규학원</button>
+    <!-- 안동김재규학원: 사용자 요청으로 비노출(2026-08-24). 재노출 시 이 버튼과 아래 tr[data-ac="akj"], #card-akj 의 style="display:none" 제거 -->
+    <button class="filter-btn" data-ac="akj" onclick="filterAc('akj')" style="display:none">안동김재규학원</button>
     <button class="filter-btn" data-ac="js" onclick="filterAc('js')">진성기숙</button>
   </div>
 
@@ -624,7 +625,7 @@ gtag('config', 'G-BDWKMQ737B');
         <td><span class="chip chip-gray">검토중</span></td>
         <td><button onclick="toggle('dp')" style="font-size:11px;border:1px solid #d1cfc5;border-radius:4px;padding:2px 6px;cursor:pointer;background:#f5f5f3">보기</button></td>
       </tr>
-      <tr data-ac="akj" data-area="12956">
+      <tr data-ac="akj" data-area="12956" style="display:none">
         <td style="font-weight:600"><span class="ac-name-link" onclick="openMap('경상북도 안동시 임하면 신덕리 1217','안동김재규학원')">📍 안동김재규학원</span></td>
         <td class="seat-cell" style="color:#9b9b96;font-weight:600;font-size:.9em">확인중</td>
         <td class="seat-cell" style="font-weight:600">4인실</td>
@@ -1010,7 +1011,7 @@ gtag('config', 'G-BDWKMQ737B');
       </div>
     </div>
 
-    <div class="h-card" id="card-akj" onclick="toggle('akj')">
+    <div class="h-card" id="card-akj" onclick="toggle('akj')" style="display:none">
       <div class="card-header">
         <div class="card-row">
           <div class="card-name">안동김재규학원 <span class="seat-badge">4인실</span></div>

@@ -382,7 +382,7 @@ gtag('config', 'G-BDWKMQ737B');
   <!-- 헤더 -->
   <div class="header">
     <div class="header-title">기숙학원 인수고려 대상 검토 및 분석 리스트</div>
-    <div class="header-sub">총 8개 학원 노출 · 40건 등기부 분석 (1곳 검토중, 1곳 비노출) &nbsp;|&nbsp; 분석시점: 2026년 4~8월 &nbsp;|&nbsp; 열람용 (법적 효력 없음)</div>
+    <div class="header-sub">총 10개 대상 노출(재수기숙 8+기업연수원 2) · 44건 등기부 분석 (1곳 검토중, 1곳 비노출) &nbsp;|&nbsp; 분석시점: 2026년 4~8월 &nbsp;|&nbsp; 열람용 (법적 효력 없음)</div>
   </div>
 
   <!-- 요약 카드 -->
@@ -398,8 +398,8 @@ gtag('config', 'G-BDWKMQ737B');
       <span class="sum-badge sb-y">신탁·경매 이력</span>
     </div>
     <div class="sum-card ok">
-      <div class="sum-lbl">양호 학원</div>
-      <div class="sum-val">1곳</div>
+      <div class="sum-lbl">양호 대상</div>
+      <div class="sum-val">3곳</div>
       <span class="sum-badge sb-g">담보 없음</span>
     </div>
     <div class="sum-card danger">
@@ -522,6 +522,8 @@ gtag('config', 'G-BDWKMQ737B');
     <!-- 안동김재규학원: 사용자 요청으로 비노출(2026-08-24). 재노출 시 이 버튼과 아래 tr[data-ac="akj"], #card-akj 의 style="display:none" 제거 -->
     <button class="filter-btn" data-ac="akj" onclick="filterAc('akj')" style="display:none">안동김재규학원</button>
     <button class="filter-btn" data-ac="js" onclick="filterAc('js')">진성기숙</button>
+    <button class="filter-btn" data-ac="kbiz" onclick="filterAc('kbiz')">중소기업중앙회 인재개발원</button>
+    <button class="filter-btn" data-ac="kolon" onclick="filterAc('kolon')">코오롱인재개발원</button>
   </div>
 
   <div class="section-label">학원별 상세비교 <span style="font-weight:400;color:#6b6b67;font-size:.85em">(면적순 정렬, 학원명 클릭 시 지도 확인)</span></div>
@@ -648,6 +650,30 @@ gtag('config', 'G-BDWKMQ737B');
         <td>2024.9 신탁 전환, 신탁원부 미확인, 과거 경매·가압류 반복 이력</td>
         <td><span class="chip chip-p">신탁주의</span></td>
         <td><button onclick="toggle('js')" style="font-size:11px;border:1px solid #d1cfc5;border-radius:4px;padding:2px 6px;cursor:pointer;background:#f5f5f3">보기</button></td>
+      </tr>
+      <tr data-ac="kbiz" data-area="47041">
+        <td style="font-weight:600"><span class="ac-name-link" onclick="openMap('경기도 용인시 처인구 원삼면 내동로14번길 41 (사암리 900)','중소기업중앙회 인재개발원')">📍 중소기업중앙회 인재개발원</span></td>
+        <td class="seat-cell" style="color:#9b9b96;font-size:.85em">기업연수원</td>
+        <td class="seat-cell" style="color:#9b9b96;font-size:.85em">해당없음</td>
+        <td class="area-cell"><div><b>건물</b> 13,650.75㎡ <span class="pyeong">(4,130평)</span></div><div style="color:#9b9b96;font-size:.85em">단일동 — 지하1+지상6층+부속(지하1 3,580.34, 1층3,313.94, 2층2,495.28, 3층2,057.94, 4층918.67, 5층704.50, 6층527.24, 부속52.84㎡)</div><div style="color:#6b6b67"><b>토지</b> 33,390㎡ <span class="pyeong">(10,101평)</span></div></td>
+        <td>중소기업중앙회 (단독)</td>
+        <td class="amount-g">없음</td>
+        <td><span class="chip chip-g">단독법인</span></td>
+        <td>을구 기록사항 없음, 압류·가처분·신탁 이력 전무(클린)</td>
+        <td><span class="chip chip-g">양호</span></td>
+        <td><button onclick="toggle('kbiz')" style="font-size:11px;border:1px solid #d1cfc5;border-radius:4px;padding:2px 6px;cursor:pointer;background:#f5f5f3">보기</button></td>
+      </tr>
+      <tr data-ac="kolon" data-area="30821">
+        <td style="font-weight:600"><span class="ac-name-link" onclick="openMap('경기도 용인시 기흥구 마북로154번길 49 (마북동 220-1)','코오롱인재개발원')">📍 코오롱인재개발원</span></td>
+        <td class="seat-cell" style="color:#9b9b96;font-size:.85em">기업연수원</td>
+        <td class="seat-cell" style="color:#9b9b96;font-size:.85em">해당없음</td>
+        <td class="area-cell"><div><b>건물</b> 6,889.54㎡ <span class="pyeong">(2,084평)</span></div><div style="color:#9b9b96;font-size:.85em">3개동(관리동 2022년 멸실 제외) — 강의동(지하+3층 2,980.72㎡), 숙박동(지하+3층 2,771.01㎡), 어학생활관(4층 1,137.81㎡)</div><div style="color:#6b6b67"><b>토지</b> 23,931㎡ <span class="pyeong">(7,239평)</span></div></td>
+        <td>주식회사 코오롱 (단독)</td>
+        <td class="amount-g">없음</td>
+        <td><span class="chip chip-g">단독법인</span></td>
+        <td>근저당 전액 말소(2025.5 우리은행 360억 말소), 신탁 이력 있으나 종료</td>
+        <td><span class="chip chip-g">양호</span></td>
+        <td><button onclick="toggle('kolon')" style="font-size:11px;border:1px solid #d1cfc5;border-radius:4px;padding:2px 6px;cursor:pointer;background:#f5f5f3">보기</button></td>
       </tr>
     </tbody>
   </table>
@@ -1156,6 +1182,116 @@ gtag('config', 'G-BDWKMQ737B');
     </div>
   </div>
 
+  <!-- ⑦ 연수원 계열 -->
+  <div class="section-label" data-group="kbiz,kolon">⑦ 기업연수원 계열 — 중소기업중앙회·코오롱 (재수기숙학원 아님, 참고용)</div>
+  <div class="cards-grid" data-group="kbiz,kolon">
+
+    <div class="h-card" id="card-kbiz" onclick="toggle('kbiz')">
+      <div class="card-header">
+        <div class="card-row">
+          <div class="card-name">중소기업중앙회 인재개발원</div>
+          <span class="risk-pill rp-g">양호</span>
+        </div>
+        <div class="card-loc">경기도 용인시 처인구 원삼면 내동로14번길 41 (사암리 900)</div>
+      </div>
+      <div class="card-body">
+        <div class="meta-row">
+          <span class="tag">소유: 중소기업중앙회 단독</span>
+          <span class="tag">건물1동+토지1필지</span>
+          <span class="tag">열람: 2026.08.24</span>
+        </div>
+        <div class="mortgage-bar-wrap">
+          <div class="bar-label"><span>유효 근저당</span><span class="bar-amount amount-g">없음</span></div>
+          <div class="bar-track"><div class="bar-fill bf-g" style="width:4%"></div></div>
+        </div>
+        <div class="risk-list">
+          <div class="risk-row"><div class="risk-dot rd-g"></div><div class="risk-text">건물·토지 을구 모두 기록사항 없음 — 근저당·전세권·가압류 전무</div></div>
+          <div class="risk-row"><div class="risk-dot rd-g"></div><div class="risk-text">압류·가처분·경매·신탁 이력 전혀 없음(설립 이후 클린)</div></div>
+          <div class="risk-row"><div class="risk-dot rd-y"></div><div class="risk-text">2006년 법인명 변경(중소기업협동조합중앙회→중소기업중앙회) — 실사용 주체 동일성 참고 확인</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-card" id="card-kolon" onclick="toggle('kolon')">
+      <div class="card-header">
+        <div class="card-row">
+          <div class="card-name">코오롱인재개발원</div>
+          <span class="risk-pill rp-g">양호</span>
+        </div>
+        <div class="card-loc">경기도 용인시 기흥구 마북로154번길 49 (마북동 220-1)</div>
+      </div>
+      <div class="card-body">
+        <div class="meta-row">
+          <span class="tag">소유: 주식회사 코오롱 단독</span>
+          <span class="tag">건물3동+토지1필지</span>
+          <span class="tag">열람: 2026.08.24</span>
+        </div>
+        <div class="mortgage-bar-wrap">
+          <div class="bar-label"><span>유효 근저당</span><span class="bar-amount amount-g">없음 (전액 말소)</span></div>
+          <div class="bar-track"><div class="bar-fill bf-g" style="width:4%"></div></div>
+        </div>
+        <div class="risk-list">
+          <div class="risk-row"><div class="risk-dot rd-g"></div><div class="risk-text">우리은행 근저당(최대 600억→360억) 2025.5.8 전액 말소 — 현재 담보 없음</div></div>
+          <div class="risk-row"><div class="risk-dot rd-y"></div><div class="risk-text">과거 신탁(2005~2008, 외환은행) 이력 있으나 재귀속 완료·현재 무관</div></div>
+          <div class="risk-row"><div class="risk-dot rd-y"></div><div class="risk-text">관리동 2022년 멸실 — 등기부 연면적과 실사용 면적 차이 가능성</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 상세: 중소기업중앙회 인재개발원 -->
+  <div class="detail-panel" id="detail-kbiz">
+    <div class="dp-top">
+      <div>
+        <div class="dp-title">중소기업중앙회 인재개발원 — 상세 분석</div>
+        <div class="dp-sub">경기도 용인시 처인구 원삼면 사암리 900 | 소유자: 중소기업중앙회 단독</div>
+      </div>
+      <button class="close-btn" onclick="toggle('kbiz')">닫기 ✕</button>
+    </div>
+    <div class="dp-grid">
+      <div class="dp-cell"><div class="dc-lbl">건물 (단일동+부속, 13,650.75㎡)</div><div class="dc-val">지하1 3,580.34 · 1층 3,313.94 · 2층 2,495.28㎡<br>3층 2,057.94 · 4층 918.67 · 5층 704.50 · 6층 527.24 · 부속 52.84㎡</div></div>
+      <div class="dp-cell"><div class="dc-lbl">토지</div><div class="dc-val">사암리 900<br>33,390㎡ (대)</div></div>
+      <div class="dp-cell"><div class="dc-lbl">을구 현황</div><div class="dc-val" style="color:#166534;font-weight:700">기록사항 없음<br>담보 부담 전무</div></div>
+    </div>
+    <div class="ri-full g"><div class="ri-title">① 담보 부담 전혀 없음 — 건물·토지 모두 을구 기록사항 없음</div><div class="ri-desc">1997년(건물)·1994년(토지) 취득 이후 근저당·전세권·가압류 설정 이력 없음</div></div>
+    <div class="ri-full g"><div class="ri-title">② 압류·가처분·경매·신탁 이력 전무</div><div class="ri-desc">갑구·을구 모두 권리 하자 없음, 표제부 변동은 행정구역명칭변경·필지 합병 등 순수 행정 이기</div></div>
+    <div class="ri-full y"><div class="ri-title">③ 2006년 법인명 변경 — 실사용 주체 동일성 확인 권장</div><div class="ri-desc">중소기업협동조합중앙회 → 중소기업중앙회(2006.8.22 변경, 2013.7.8 등기 반영) | 최신 법인 정보와 인재개발원 실사용 주체 일치 여부 별도 확인 권장</div></div>
+    <div class="summary-box sb-success">
+      <div class="sb-title g">종합 의견</div>
+      <ul>
+        <li>등기부상 <span class="hl">권리 부담이 전혀 없는 완전 클린 상태</span> — 재수기숙학원이 아닌 협회 산하 연수원으로 참고용 등록</li>
+        <li>단독 법인 소유로 지분·공유 관련 분쟁 소지 없음</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 상세: 코오롱인재개발원 -->
+  <div class="detail-panel" id="detail-kolon">
+    <div class="dp-top">
+      <div>
+        <div class="dp-title">코오롱인재개발원 — 상세 분석</div>
+        <div class="dp-sub">경기도 용인시 기흥구 마북동 220-1 | 소유자: 주식회사 코오롱 단독</div>
+      </div>
+      <button class="close-btn" onclick="toggle('kolon')">닫기 ✕</button>
+    </div>
+    <div class="dp-grid">
+      <div class="dp-cell"><div class="dc-lbl">건물 (3개동, 6,889.54㎡)</div><div class="dc-val">강의동: 지하+지상3층 2,980.72㎡<br>숙박동: 지하+지상3층 2,771.01㎡ / 어학생활관: 4층 1,137.81㎡</div></div>
+      <div class="dp-cell"><div class="dc-lbl">토지</div><div class="dc-val">마북동 220-1<br>23,931㎡ (대)</div></div>
+      <div class="dp-cell"><div class="dc-lbl">을구 현황</div><div class="dc-val" style="color:#166534;font-weight:700">근저당 전액 말소<br>현재 담보 없음</div></div>
+    </div>
+    <div class="ri-full g"><div class="ri-title">① 우리은행 근저당(최대 600억→360억) 2025.5.8 전액 말소</div><div class="ri-desc">2016.3.4 설정, 2019.5.16 360억으로 감액 후 2025.5.8 해지 확인 — 건물·토지 공동담보(2016-361호) 전부 동일하게 말소</div></div>
+    <div class="ri-full y"><div class="ri-title">② 과거 신탁(2005~2008, 한국외환은행) — 현재 무관</div><div class="ri-desc">2008.1.4 신탁재산 귀속으로 코오롱에 재귀속, 신탁원부 제8·9호 종료됨</div></div>
+    <div class="ri-full b"><div class="ri-title">③ 관리동 2022.6.13 멸실 — 실사용 면적 현장 확인 권장</div><div class="ri-desc">등기부 표시(6,889.54㎡)와 실사용 면적 차이 가능성, 건물 준공 1989년으로 노후도 별도 확인 필요</div></div>
+    <div class="summary-box sb-success">
+      <div class="sb-title g">종합 의견</div>
+      <ul>
+        <li>현재 <span class="hl">근저당·가압류·압류·신탁 등 유효한 부담이 전혀 없는 무부담 상태</span></li>
+        <li>2025년 5월 대출 말소가 비교적 최근이므로 실제 완제 여부·별도 대출 존재는 별도 확인 권장</li>
+      </ul>
+    </div>
+  </div>
+
   <!-- 상세: 남안성비상에듀 -->
   <div class="detail-panel" id="detail-nas">
     <div class="dp-top">
@@ -1244,7 +1380,9 @@ var ACLINKS = {
   ak:   { home:'https://www.knowingstudy.co.kr/', gallery:'https://www.knowingstudy.co.kr/105' },
   dp:   { home:'https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=7724c6e0-84b3-4937-8877-7c9f5a70184e' },
   akj:  { home:'http://campus.kpa.co.kr/andong/index.html', gallery:'http://campus.kpa.co.kr/andong/html/photoAlbum.html' },
-  js:   { home:'https://www.jinsungedu.com/' }
+  js:   { home:'https://www.jinsungedu.com/' },
+  kbiz: { home:'https://www.sbhrdc.re.kr/' },
+  kolon:{ home:'https://kolon.labs.hunet.co.kr/' }
 };
 
 function linkChipsHtml(ac, compact) {

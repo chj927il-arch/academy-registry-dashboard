@@ -1382,7 +1382,7 @@ var ACLINKS = {
   akj:  { home:'http://campus.kpa.co.kr/andong/index.html', gallery:'http://campus.kpa.co.kr/andong/html/photoAlbum.html' },
   js:   { home:'https://www.jinsungedu.com/' },
   kbiz: { home:'https://www.sbhrdc.re.kr/' },
-  kolon:{ home:'https://kolon.labs.hunet.co.kr/' }
+  kolon:{ home:'https://kolon.labs.hunet.co.kr/', im:'assets/코오롱_용인부지_IM.pdf' }
 };
 
 function linkChipsHtml(ac, compact) {
@@ -1399,6 +1399,7 @@ function linkChipsHtml(ac, compact) {
     if (l.vr) html += chip(l.vr, '🕶️', 'VR투어');
     if (l.campus) html += chip(l.campus, '🚶', '캠퍼스 둘러보기');
     if (l.dorm) html += chip(l.dorm, '🛏️', '기숙사환경');
+    if (l.im) html += chip(l.im, '📄', '부지소개서(IM)');
   }
   return html;
 }

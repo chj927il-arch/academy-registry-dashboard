@@ -382,7 +382,7 @@ gtag('config', 'G-BDWKMQ737B');
   <!-- 헤더 -->
   <div class="header">
     <div class="header-title">기숙학원 인수고려 대상 검토 및 분석 리스트</div>
-    <div class="header-sub">총 8개 학원 · 38건 등기부 분석 (2곳 검토중) &nbsp;|&nbsp; 분석시점: 2026년 4~8월 &nbsp;|&nbsp; 열람용 (법적 효력 없음)</div>
+    <div class="header-sub">총 9개 학원 · 40건 등기부 분석 (2곳 검토중) &nbsp;|&nbsp; 분석시점: 2026년 4~8월 &nbsp;|&nbsp; 열람용 (법적 효력 없음)</div>
   </div>
 
   <!-- 요약 카드 -->
@@ -409,8 +409,8 @@ gtag('config', 'G-BDWKMQ737B');
     </div>
     <div class="sum-card purple">
       <div class="sum-lbl">신탁등기 학원</div>
-      <div class="sum-val">2곳</div>
-      <span class="sum-badge sb-p">양지비상에듀 외 1</span>
+      <div class="sum-val">3곳</div>
+      <span class="sum-badge sb-p">양지비상에듀 외 2</span>
     </div>
     <div class="sum-card" style="border-color:#d1cfc5;border-left:4px solid #9b9b96">
       <div class="sum-lbl">검토중 학원</div>
@@ -520,6 +520,7 @@ gtag('config', 'G-BDWKMQ737B');
     <button class="filter-btn" data-ac="ak" onclick="filterAc('ak')">아는공부기숙</button>
     <button class="filter-btn" data-ac="dp" onclick="filterAc('dp')">덕평수련원</button>
     <button class="filter-btn" data-ac="akj" onclick="filterAc('akj')">안동김재규학원</button>
+    <button class="filter-btn" data-ac="js" onclick="filterAc('js')">진성기숙</button>
   </div>
 
   <div class="section-label">학원별 상세비교 <span style="font-weight:400;color:#6b6b67;font-size:.85em">(면적순 정렬, 학원명 클릭 시 지도 확인)</span></div>
@@ -634,6 +635,18 @@ gtag('config', 'G-BDWKMQ737B');
         <td>안동시 압류 1건 미해제(2021), 부지 29필지 중 1필지만 확인</td>
         <td><span class="chip chip-gray">검토중</span></td>
         <td><button onclick="toggle('akj')" style="font-size:11px;border:1px solid #d1cfc5;border-radius:4px;padding:2px 6px;cursor:pointer;background:#f5f5f3">보기</button></td>
+      </tr>
+      <tr data-ac="js" data-area="17305">
+        <td style="font-weight:600"><span class="ac-name-link" onclick="openMap('경기도 광주시 초월읍 양지길 105 (무갑리 520-19)','진성기숙')">📍 진성기숙</span></td>
+        <td class="seat-cell" style="color:#9b9b96;font-weight:600;font-size:.9em">확인중</td>
+        <td class="seat-cell" style="color:#9b9b96;font-weight:600;font-size:.9em">확인중</td>
+        <td class="area-cell"><div><b>건물</b> 8,788.14㎡ <span class="pyeong">(2,659평)</span></div><div style="color:#9b9b96;font-size:.85em">단일동 — 지층+지상3층(지층795, 1층2,832.57, 2층2,709.15, 3층2,451.42㎡)</div><div style="color:#6b6b67"><b>토지</b> 8,517㎡ <span class="pyeong">(2,577평)</span></div></td>
+        <td>우리자산신탁(수탁)<br><span style="color:#6b6b67;font-size:11px">실질: 문귀출</span></td>
+        <td class="amount-y">없음(신탁)</td>
+        <td><span class="chip chip-p">담보신탁</span></td>
+        <td>2024.9 신탁 전환, 신탁원부 미확인, 과거 경매·가압류 반복 이력</td>
+        <td><span class="chip chip-p">신탁주의</span></td>
+        <td><button onclick="toggle('js')" style="font-size:11px;border:1px solid #d1cfc5;border-radius:4px;padding:2px 6px;cursor:pointer;background:#f5f5f3">보기</button></td>
       </tr>
     </tbody>
   </table>
@@ -1081,6 +1094,67 @@ gtag('config', 'G-BDWKMQ737B');
     </div>
   </div>
 
+  <!-- ⑥ 광주 계열 -->
+  <div class="section-label" data-group="js">⑥ 광주 계열 — 진성기숙 (신탁·주의)</div>
+  <div class="cards-grid" data-group="js">
+
+    <div class="h-card" id="card-js" onclick="toggle('js')">
+      <div class="card-header">
+        <div class="card-row">
+          <div class="card-name">진성기숙학원</div>
+          <span class="risk-pill rp-p">★ 신탁주의</span>
+        </div>
+        <div class="card-loc">경기도 광주시 초월읍 양지길 105 (무갑리 520-19)</div>
+      </div>
+      <div class="card-body">
+        <div class="meta-row">
+          <span class="tag">수탁: 우리자산신탁㈜</span>
+          <span class="tag">실질: 문귀출</span>
+          <span class="tag">건물1동+토지1필지</span>
+          <span class="tag">열람: 2026.08.24</span>
+        </div>
+        <div class="mortgage-bar-wrap">
+          <div class="bar-label"><span>유효 근저당</span><span class="bar-amount amount-y">없음 (담보신탁, 전건 말소)</span></div>
+          <div class="bar-track"><div class="bar-fill bf-p" style="width:6%"></div></div>
+        </div>
+        <div class="risk-list">
+          <div class="risk-row"><div class="risk-dot rd-p"></div><div class="risk-text">2024.9.13 우리자산신탁으로 신탁 전환 — 신탁원부(토지 제2024-4392호/건물 제2024-4393호) 확인 필수</div></div>
+          <div class="risk-row"><div class="risk-dot rd-y"></div><div class="risk-text">1994~2020년 가압류·압류·임의경매 반복 이력 — 자금난 노출 이력 시사</div></div>
+          <div class="risk-row"><div class="risk-dot rd-g"></div><div class="risk-text">등기부상 근저당은 현재 전건 말소(신규 설정 없음)</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 상세: 진성기숙 -->
+  <div class="detail-panel" id="detail-js">
+    <div class="dp-top">
+      <div>
+        <div class="dp-title">진성기숙학원 — 상세 분석</div>
+        <div class="dp-sub">경기도 광주시 초월읍 양지길 105 (무갑리 520-19) | 수탁자: 우리자산신탁㈜ (위탁자: 문귀출 추정)</div>
+      </div>
+      <button class="close-btn" onclick="toggle('js')">닫기 ✕</button>
+    </div>
+    <div class="dp-grid">
+      <div class="dp-cell"><div class="dc-lbl">건물 (단일동, 8,788.14㎡)</div><div class="dc-val">지층 795㎡ · 1층 2,832.57㎡<br>2층 2,709.15㎡ · 3층 2,451.42㎡</div></div>
+      <div class="dp-cell"><div class="dc-lbl">토지</div><div class="dc-val">무갑리 520-19<br>8,517㎡ (대)</div></div>
+      <div class="dp-cell"><div class="dc-lbl">소유권 이력</div><div class="dc-val">문귀출(개인) → 2024.9.13<br>우리자산신탁㈜ 신탁 이전(현재)</div></div>
+    </div>
+    <div class="ri-full p"><div class="ri-title">① 2024.9.13 우리자산신탁 신탁 전환 — 신탁원부 미확인</div><div class="ri-desc">토지·건물 모두 신탁원부(토지 제2024-4392호/건물 제2024-4393호) 존재 | 담보신탁 여부·우선수익자·채무 규모는 신탁원부 열람 전까지 불명 | 신탁 부동산은 임대차·매매 시 신탁원부 확인이 법적으로 요구됨</div></div>
+    <div class="ri-full y"><div class="ri-title">② 과거 극심한 가압류·경매 이력(1994~2020년)</div><div class="ri-desc">1994~2000년 다수 채권자 가압류·압류, 2000년 임의경매로 소유권 변경, 2015년 메가스터디 임의경매개시(2016.1 취하) 등 반복 — 장기간 자금난 노출 이력</div></div>
+    <div class="ri-full g"><div class="ri-title">③ 현재 근저당권 없음 — 과거 제일은행·SC·메가스터디·하나은행 근저당 전건 말소</div><div class="ri-desc">2020.12.1 설정된 마지막 근저당(채권최고액 67.8억)도 2024.9.13 신탁 전환과 함께 해지 확인, 신탁 전환 이후 신규 설정 없음</div></div>
+    <div class="ri-full b"><div class="ri-title">④ 2021.3.31 전세권(전세금 8억, 주식회사용인종로학원) — 현재 말소</div><div class="ri-desc">존속기간 2021.12.31까지였던 전세권은 2024.11.19 말소 완료되어 현재 무효</div></div>
+    <div class="summary-box sb-purple">
+      <div class="sb-title p">종합 의견 — 주의</div>
+      <ul>
+        <li>등기부상 근저당은 현재 없으나 <span class="hl">2024년 신탁 전환으로 소유권이 신탁회사로 이전</span> — 신탁원부 열람 전까지 "양호" 판정 불가</li>
+        <li>과거 1994~2020년 장기간 가압류·경매 반복 이력은 부동산이 오랫동안 자금난에 노출되어 왔음을 시사</li>
+        <li>숙소구성·좌석규모는 공식 등기부에 없는 항목으로 자료 확인 전까지 "확인중" — 공식 홈페이지(jinsungedu.com) 추가 확인 권장</li>
+      </ul>
+    </div>
+  </div>
+
   <!-- 상세: 남안성비상에듀 -->
   <div class="detail-panel" id="detail-nas">
     <div class="dp-top">
@@ -1168,7 +1242,8 @@ var ACLINKS = {
   tc:   { home:'https://icheontopclass.imweb.me/', video:'https://www.youtube.com/channel/UCR4qiQSS55_9qmaCc-dMNkw/videos' },
   ak:   { home:'https://www.knowingstudy.co.kr/', gallery:'https://www.knowingstudy.co.kr/105' },
   dp:   { home:'https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=7724c6e0-84b3-4937-8877-7c9f5a70184e' },
-  akj:  { home:'http://campus.kpa.co.kr/andong/index.html', gallery:'http://campus.kpa.co.kr/andong/html/photoAlbum.html' }
+  akj:  { home:'http://campus.kpa.co.kr/andong/index.html', gallery:'http://campus.kpa.co.kr/andong/html/photoAlbum.html' },
+  js:   { home:'https://www.jinsungedu.com/' }
 };
 
 function linkChipsHtml(ac, compact) {

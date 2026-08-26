@@ -382,7 +382,7 @@ gtag('config', 'G-BDWKMQ737B');
   <!-- 헤더 -->
   <div class="header">
     <div class="header-title">기숙학원 인수고려 대상 검토 및 분석 리스트</div>
-    <div class="header-sub">총 10개 대상 노출(재수기숙 8+기업연수원 2) · 44건 등기부 분석 (1곳 검토중, 1곳 비노출) &nbsp;|&nbsp; 분석시점: 2026년 4~8월 &nbsp;|&nbsp; 열람용 (법적 효력 없음)</div>
+    <div class="header-sub">총 12개 대상 노출(재수기숙 10+기업연수원 2) · 44건 등기부 분석 (3곳 검토중, 1곳 비노출) &nbsp;|&nbsp; 분석시점: 2026년 4~8월 &nbsp;|&nbsp; 열람용 (법적 효력 없음)</div>
   </div>
 
   <!-- 요약 카드 -->
@@ -414,7 +414,7 @@ gtag('config', 'G-BDWKMQ737B');
     </div>
     <div class="sum-card" style="border-color:#d1cfc5;border-left:4px solid #9b9b96">
       <div class="sum-lbl">검토중 학원</div>
-      <div class="sum-val">1곳</div>
+      <div class="sum-val">3곳</div>
       <span class="sum-badge" style="background:#f5f5f3;color:#6b6b67;border:1px solid #d1cfc5">등기 추가확인 필요</span>
     </div>
   </div>
@@ -524,6 +524,8 @@ gtag('config', 'G-BDWKMQ737B');
     <button class="filter-btn" data-ac="js" onclick="filterAc('js')">진성기숙</button>
     <button class="filter-btn" data-ac="kbiz" onclick="filterAc('kbiz')">중소기업중앙회 인재개발원</button>
     <button class="filter-btn" data-ac="kolon" onclick="filterAc('kolon')">코오롱인재개발원</button>
+    <button class="filter-btn" data-ac="yc" onclick="filterAc('yc')">역사적사명</button>
+    <button class="filter-btn" data-ac="nn" onclick="filterAc('nn')">독학N숲</button>
   </div>
 
   <div class="section-label">학원별 상세비교 <span style="font-weight:400;color:#6b6b67;font-size:.85em">(면적순 정렬, 학원명 클릭 시 지도 확인)</span></div>
@@ -674,6 +676,30 @@ gtag('config', 'G-BDWKMQ737B');
         <td>근저당 전액 말소(2025.5 우리은행 360억 말소), 신탁 이력 있으나 종료</td>
         <td><span class="chip chip-g">양호</span></td>
         <td><button onclick="toggle('kolon')" style="font-size:11px;border:1px solid #d1cfc5;border-radius:4px;padding:2px 6px;cursor:pointer;background:#f5f5f3">보기</button></td>
+      </tr>
+      <tr data-ac="yc" data-area="0">
+        <td style="font-weight:600"><span class="ac-name-link" onclick="openMap('경기도 안성시 일죽면 판교길 65-9 (화봉리)','역사적사명 기숙학원')">📍 역사적사명</span></td>
+        <td class="seat-cell" style="font-weight:600">370석</td>
+        <td class="seat-cell" style="font-weight:600">2인1실</td>
+        <td class="area-cell"><div style="color:#9b9b96">등기부 미확보</div></td>
+        <td style="color:#9b9b96">확인중</td>
+        <td class="amount-y" style="color:#9b9b96">확인중</td>
+        <td><span class="chip chip-gray">확인중</span></td>
+        <td>구 용인종로학원 → 2026 브랜드 변경, 2010.10 개원(정원 230명 → 370석 증축 추정)</td>
+        <td><span class="chip chip-gray">검토중</span></td>
+        <td><button onclick="toggle('yc')" style="font-size:11px;border:1px solid #d1cfc5;border-radius:4px;padding:2px 6px;cursor:pointer;background:#f5f5f3">보기</button></td>
+      </tr>
+      <tr data-ac="nn" data-area="0">
+        <td style="font-weight:600"><span class="ac-name-link" onclick="openMap('경기도 남양주시 수동면 외방리','독학N숲 기숙학원')">📍 독학N숲</span></td>
+        <td class="seat-cell" style="font-weight:600">300석</td>
+        <td class="seat-cell" style="color:#9b9b96;font-weight:600;font-size:.9em">확인중</td>
+        <td class="area-cell"><div style="color:#9b9b96">등기부 미확보</div></td>
+        <td style="color:#9b9b96">확인중</td>
+        <td class="amount-y" style="color:#9b9b96">확인중</td>
+        <td><span class="chip chip-gray">확인중</span></td>
+        <td>구 남양주대성기숙학원 → 독학N숲으로 개명, 현재 폐원</td>
+        <td><span class="chip chip-gray">검토중</span></td>
+        <td><button onclick="toggle('nn')" style="font-size:11px;border:1px solid #d1cfc5;border-radius:4px;padding:2px 6px;cursor:pointer;background:#f5f5f3">보기</button></td>
       </tr>
     </tbody>
   </table>
@@ -1293,6 +1319,116 @@ gtag('config', 'G-BDWKMQ737B');
     </div>
   </div>
 
+  <!-- ⑧ 검토중(등기부 미확보) -->
+  <div class="section-label" data-group="yc,nn">⑧ 검토중 — 등기부 미확보(기본정보만 반영)</div>
+  <div class="cards-grid" data-group="yc,nn">
+
+    <div class="h-card" id="card-yc" onclick="toggle('yc')">
+      <div class="card-header">
+        <div class="card-row">
+          <div class="card-name">역사적사명 기숙학원 <span class="seat-badge">370석·2인1실</span></div>
+          <span class="risk-pill rp-gray">검토중</span>
+        </div>
+        <div class="card-loc">경기도 안성시 일죽면 판교길 65-9 (화봉리)</div>
+      </div>
+      <div class="card-body">
+        <div class="meta-row">
+          <span class="tag">구 용인종로학원</span>
+          <span class="tag">2010.10 개원</span>
+          <span class="tag">좌석 370석</span>
+          <span class="tag">2인1실</span>
+        </div>
+        <div class="mortgage-bar-wrap">
+          <div class="bar-label"><span>등기부</span><span class="bar-amount" style="color:#9b9b96">미확보</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:3%;background:#9b9b96"></div></div>
+        </div>
+        <div class="risk-list">
+          <div class="risk-row"><div class="risk-dot" style="background:#9b9b96"></div><div class="risk-text">등기부등본 미확보 — 소유자·근저당 등 권리관계 미확인, 홈페이지·기본정보만 우선 반영</div></div>
+          <div class="risk-row"><div class="risk-dot" style="background:#9b9b96"></div><div class="risk-text">구 "용인종로학원" 브랜드로 18년 운영 → 2026학년도 대비 "역사적사명"으로 개명</div></div>
+          <div class="risk-row"><div class="risk-dot rd-y"></div><div class="risk-text">"(주)용인종로학원" 명의는 용인이강기숙(2021 가압류)·용인비상에듀(전세권자)·진성기숙(2021 전세권자)에도 등장 — 계열/거래 관계 참고 확인</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-card" id="card-nn" onclick="toggle('nn')">
+      <div class="card-header">
+        <div class="card-row">
+          <div class="card-name">독학N숲 기숙학원 <span class="seat-badge">300석</span></div>
+          <span class="risk-pill rp-gray">검토중</span>
+        </div>
+        <div class="card-loc">경기도 남양주시 수동면 외방리 일대</div>
+      </div>
+      <div class="card-body">
+        <div class="meta-row">
+          <span class="tag">구 남양주대성기숙학원</span>
+          <span class="tag">좌석 300석</span>
+          <span class="tag" style="background:#fef2f2;color:#991b1b;border-color:#fca5a5">현재 폐원</span>
+        </div>
+        <div class="mortgage-bar-wrap">
+          <div class="bar-label"><span>등기부</span><span class="bar-amount" style="color:#9b9b96">미확보</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:3%;background:#9b9b96"></div></div>
+        </div>
+        <div class="risk-list">
+          <div class="risk-row"><div class="risk-dot" style="background:#ef4444"></div><div class="risk-text">현재 폐원 상태 — 공식 홈페이지 없음, 참고용 블로그 링크로 대체</div></div>
+          <div class="risk-row"><div class="risk-dot" style="background:#9b9b96"></div><div class="risk-text">등기부등본 미확보 — 소유자·근저당 등 권리관계 미확인</div></div>
+          <div class="risk-row"><div class="risk-dot" style="background:#9b9b96"></div><div class="risk-text">구 "남양주대성기숙학원" → "독학N숲기숙학원"으로 개명 후 운영 중단</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 상세: 역사적사명 -->
+  <div class="detail-panel" id="detail-yc">
+    <div class="dp-top">
+      <div>
+        <div class="dp-title">역사적사명 기숙학원 — 상세 분석 <span style="font-size:12px;font-weight:600;color:#6b6b67">(검토중 — 등기부 미확보)</span></div>
+        <div class="dp-sub">경기도 안성시 일죽면 판교길 65-9 (화봉리) | 소유자 미확인</div>
+      </div>
+      <button class="close-btn" onclick="toggle('yc')">닫기 ✕</button>
+    </div>
+    <div class="dp-grid">
+      <div class="dp-cell"><div class="dc-lbl">좌석규모</div><div class="dc-val">370석<br>(사용자 제공 정보)</div></div>
+      <div class="dp-cell"><div class="dc-lbl">숙소구성</div><div class="dc-val">2인1실<br>(사용자 제공 정보)</div></div>
+      <div class="dp-cell"><div class="dc-lbl">연혁</div><div class="dc-val">2010.10 개원(구 용인종로학원)<br>2026학년도 대비 "역사적사명"으로 개명</div></div>
+    </div>
+    <div class="ri-full y" style="border-left-color:#9b9b96"><div class="ri-title">① 검토중 — 등기부등본 미확보</div><div class="ri-desc">소유자, 근저당, 압류 등 권리관계를 확인할 등기부가 아직 없음 — 등기부 확보 시 재분석 예정</div></div>
+    <div class="ri-full b"><div class="ri-title">② 브랜드 변경 이력</div><div class="ri-desc">18년간 "종로학원" 브랜드의 기숙학원(용인종로학원)으로 운영되다 2028학년도 수능 체제 변화 대응 등을 이유로 "역사적사명"으로 개명</div></div>
+    <div class="ri-full y"><div class="ri-title">③ "(주)용인종로학원" 명의의 타 부동산 연계 이력 — 참고</div><div class="ri-desc">동일 명의(주식회사용인종로학원)가 용인이강기숙(2021.1 가압류, 현재 말소), 용인비상에듀(전세권자, 전세금 4억), 진성기숙 광주캠퍼스(2021.3 전세권자, 전세금 8억, 현재 말소)에도 등장 — 역사적사명(구 용인종로학원)과의 관계·거래 성격은 별도 확인 필요</div></div>
+    <div class="summary-box" style="background:#f5f5f3;border-color:#d1cfc5">
+      <div class="sb-title" style="color:#6b6b67">종합 의견 — 검토중</div>
+      <ul>
+        <li>등기부 미확보로 권리관계 판정 보류 — 좌석규모(370석)·숙소구성(2인1실)만 우선 반영</li>
+        <li>등기부 확보 시 재분석 예정</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 상세: 독학N숲 -->
+  <div class="detail-panel" id="detail-nn">
+    <div class="dp-top">
+      <div>
+        <div class="dp-title">독학N숲 기숙학원 — 상세 분석 <span style="font-size:12px;font-weight:600;color:#6b6b67">(검토중 — 등기부 미확보, 현재 폐원)</span></div>
+        <div class="dp-sub">경기도 남양주시 수동면 외방리 일대 | 소유자 미확인</div>
+      </div>
+      <button class="close-btn" onclick="toggle('nn')">닫기 ✕</button>
+    </div>
+    <div class="dp-grid">
+      <div class="dp-cell"><div class="dc-lbl">좌석규모</div><div class="dc-val">300석<br>(사용자 제공 정보)</div></div>
+      <div class="dp-cell"><div class="dc-lbl">숙소구성</div><div class="dc-val" style="color:#9b9b96">확인중</div></div>
+      <div class="dp-cell"><div class="dc-lbl">현재 상태</div><div class="dc-val" style="color:#991b1b;font-weight:700">폐원<br>(공식 홈페이지 없음)</div></div>
+    </div>
+    <div class="ri-full r"><div class="ri-title">① 현재 폐원 상태</div><div class="ri-desc">구 남양주대성기숙학원 → 독학N숲기숙학원으로 개명 후 운영을 중단한 것으로 확인됨. 공식 홈페이지가 없어 참고 블로그 링크로 대체</div></div>
+    <div class="ri-full y" style="border-left-color:#9b9b96"><div class="ri-title">② 검토중 — 등기부등본 미확보</div><div class="ri-desc">소유자, 근저당, 압류 등 권리관계를 확인할 등기부가 아직 없음 — 등기부 확보 시 재분석 예정</div></div>
+    <div class="summary-box" style="background:#f5f5f3;border-color:#d1cfc5">
+      <div class="sb-title" style="color:#6b6b67">종합 의견 — 검토중</div>
+      <ul>
+        <li>현재 폐원 상태이며 등기부 미확보로 권리관계 판정 보류 — 좌석규모(300석)만 우선 반영</li>
+        <li>등기부 확보 시 재분석 예정</li>
+      </ul>
+    </div>
+  </div>
+
   <!-- 상세: 남안성비상에듀 -->
   <div class="detail-panel" id="detail-nas">
     <div class="dp-top">
@@ -1383,7 +1519,9 @@ var ACLINKS = {
   akj:  { home:'http://campus.kpa.co.kr/andong/index.html', gallery:'http://campus.kpa.co.kr/andong/html/photoAlbum.html' },
   js:   { home:'https://www.spartajsedu.com/', brochure:'assets/진성스파르타_2027안내책자.pdf' },
   kbiz: { home:'https://www.sbhrdc.re.kr/' },
-  kolon:{ home:'https://kolon.labs.hunet.co.kr/', im:'assets/코오롱_용인부지_IM.pdf' }
+  kolon:{ home:'https://kolon.labs.hunet.co.kr/', im:'assets/코오롱_용인부지_IM.pdf' },
+  yc:   { home:'http://www.ysedu.co.kr/' },
+  nn:   { home:'https://blog.naver.com/pp270508/224118226854' }
 };
 
 function linkChipsHtml(ac, compact) {

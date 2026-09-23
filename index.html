@@ -299,6 +299,35 @@ gtag('config', 'G-BDWKMQ737B');
   .filter-btn.active { background: #1e2d40; border-color: #1e2d40; color: #fff; }
   .section-hidden { display: none !important; }
 
+  /* 업데이트 카드 */
+  .update-card {
+    background: #fff; border: 1.5px solid #d1cfc5; border-left: 4px solid #d1cfc5;
+    border-radius: 10px; padding: 14px 16px; cursor: pointer;
+    transition: box-shadow .15s, border-color .15s;
+  }
+  .update-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,.10); border-color: #9b9b96; }
+  .uc-r { border-left-color: #e24b4a; }
+  .uc-y { border-left-color: #ef9f27; }
+  .uc-b { border-left-color: #534ab7; }
+  .uc-badge {
+    display: inline-block; font-size: 10px; font-weight: 700; border-radius: 99px;
+    padding: 2px 8px; margin-bottom: 6px; border: 1px solid;
+  }
+  .ucb-r { background:#fef2f2; color:#991b1b; border-color:#fca5a5; }
+  .ucb-g { background:#f0fdf4; color:#166534; border-color:#86efac; }
+  .ucb-y { background:#fffbeb; color:#92400e; border-color:#fcd34d; }
+  .ucb-b { background:#eef2ff; color:#3730a3; border-color:#a5b4fc; }
+  .uc-name { font-size: 14px; font-weight: 700; color: #1a1a18; margin-bottom: 6px; }
+  .uc-body { font-size: 12px; color: #4a4a47; line-height: 1.6; margin-bottom: 8px; }
+  .uc-foot { font-size: 11px; color: #9b9b96; text-align: right; }
+
+  /* 변경학원 NEW 배지 */
+  .card-changed-badge {
+    display: inline-block; font-size: 9px; font-weight: 700; color: #fff;
+    background: #e24b4a; border-radius: 4px; padding: 1px 5px;
+    margin-left: 5px; vertical-align: middle; letter-spacing: .04em;
+  }
+
   .ac-name-link { cursor: pointer; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px; }
   .ac-name-link:hover { color: #1e2d40; }
   .area-cell div { font-size: .95em; line-height: 1.5; }
@@ -511,9 +540,53 @@ gtag('config', 'G-BDWKMQ737B');
   </div>
 
   <div class="hr"></div>
+
+  <!-- ── 최근 업데이트 섹션 ── -->
+  <div class="section-label" id="updates-section">📣 최근 업데이트 <span style="font-weight:400;font-size:.85em;color:#6b6b67">— 2026.09.23 기준</span></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-bottom:24px">
+
+    <div class="update-card uc-r" onclick="filterAc('kolon')">
+      <div class="uc-badge ucb-r">⚠ 매각추진</div>
+      <div class="uc-name">코오롱인재개발원</div>
+      <div class="uc-body">2026.1 매각 추진 발표(서울경제 단독). RFP 발송 완료. 낙찰 여부 미확인 — 실제 매각 진행 가능성 높음. 선점 기회 검토 요망.</div>
+      <div class="uc-foot">클릭 시 해당 학원 보기 →</div>
+    </div>
+
+    <div class="update-card uc-r" onclick="filterAc('nn')">
+      <div class="uc-badge ucb-g">정정: 운영중</div>
+      <div class="uc-name">독학N숲 기숙학원</div>
+      <div class="uc-body">기존 '폐원' 표기 오류 정정. 2024.10 남양주대성기숙학원 → 독학N숲기숙학원으로 리브랜딩 완료. 2026년 N수 독학반 모집 진행 중.</div>
+      <div class="uc-foot">클릭 시 해당 학원 보기 →</div>
+    </div>
+
+    <div class="update-card uc-y" onclick="filterAc('kbiz')">
+      <div class="uc-badge ucb-y">매각이력확인</div>
+      <div class="uc-name">중소기업중앙회 인재개발원</div>
+      <div class="uc-body">2022년 매각 입찰 공고 이력(예정가 약 290억 — 토지 199억·건물 91억). 현재 매각 완료 여부 불확실. 접촉 전 최신 현황 확인 필요.</div>
+      <div class="uc-foot">클릭 시 해당 학원 보기 →</div>
+    </div>
+
+    <div class="update-card uc-b" onclick="filterAc('nas')">
+      <div class="uc-badge ucb-b">이전·리모델링완료</div>
+      <div class="uc-name">남안성비상에듀</div>
+      <div class="uc-body">충남 태안 → 경기 안성 이전 완료. 호텔급 전면 리모델링 완료. 현재 정원 마감 대기 운영 중. 2026 글로벌파워브랜드 대상 수상.</div>
+      <div class="uc-foot">클릭 시 해당 학원 보기 →</div>
+    </div>
+
+    <div class="update-card uc-b" onclick="filterAc('yang')">
+      <div class="uc-badge ucb-b">운영변경</div>
+      <div class="uc-name">양지비상에듀</div>
+      <div class="uc-body">2025년부터 남학생 전용 → 남녀 통합 전환 완료. 여학생 신규 모집 진행. (신탁·근저당 구조 변동 없음)</div>
+      <div class="uc-foot">클릭 시 해당 학원 보기 →</div>
+    </div>
+
+  </div>
+
+  <div class="hr"></div>
   <div class="section-label">학원별 바로가기</div>
   <div id="filter-bar" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
     <button class="filter-btn active" data-ac="all" onclick="filterAc('all')">전체보기</button>
+    <button class="filter-btn" data-ac="changed" onclick="filterAc('changed')" style="background:#fff3cd;border-color:#f59e0b;color:#92400e;font-weight:700">📣 최근변경</button>
     <button class="filter-btn" data-ac="yj" onclick="filterAc('yj')">용인이강기숙</button>
     <button class="filter-btn" data-ac="yang" onclick="filterAc('yang')">양지비상에듀</button>
     <button class="filter-btn" data-ac="bs1" onclick="filterAc('bs1')">용인비상에듀</button>
@@ -743,7 +816,7 @@ gtag('config', 'G-BDWKMQ737B');
     <div class="h-card" id="card-yang" onclick="toggle('yang')">
       <div class="card-header">
         <div class="card-row">
-          <div class="card-name">양지비상에듀기숙학원 <span class="seat-badge">250명</span></div>
+          <div class="card-name">양지비상에듀기숙학원 <span class="seat-badge">250명</span> <span class="card-changed-badge">UPD</span></div>
           <span class="risk-pill rp-p">★ 신탁주의</span>
         </div>
         <div class="card-loc">경기도 용인시 처인구 양지읍 식금로45번길 34, 34-2</div>
@@ -948,7 +1021,7 @@ gtag('config', 'G-BDWKMQ737B');
     <div class="h-card" id="card-nas" onclick="toggle('nas')">
       <div class="card-header">
         <div class="card-row">
-          <div class="card-name">남안성비상에듀기숙학원 <span class="seat-badge">238명</span></div>
+          <div class="card-name">남안성비상에듀기숙학원 <span class="seat-badge">238명</span> <span class="card-changed-badge">UPD</span></div>
           <span class="risk-pill rp-r">⚠ 고위험</span>
         </div>
         <div class="card-loc">경기도 안성시 삼죽면 진촌진말길 38 (진촌리 577-1, 578)</div>
@@ -1220,7 +1293,7 @@ gtag('config', 'G-BDWKMQ737B');
     <div class="h-card" id="card-kbiz" onclick="toggle('kbiz')">
       <div class="card-header">
         <div class="card-row">
-          <div class="card-name">중소기업중앙회 인재개발원</div>
+          <div class="card-name">중소기업중앙회 인재개발원 <span class="card-changed-badge">UPD</span></div>
           <span class="risk-pill rp-y">매각이력확인</span>
         </div>
         <div class="card-loc">경기도 용인시 처인구 원삼면 내동로14번길 41 (사암리 900)</div>
@@ -1247,7 +1320,7 @@ gtag('config', 'G-BDWKMQ737B');
     <div class="h-card" id="card-kolon" onclick="toggle('kolon')">
       <div class="card-header">
         <div class="card-row">
-          <div class="card-name">코오롱인재개발원</div>
+          <div class="card-name">코오롱인재개발원 <span class="card-changed-badge">UPD</span></div>
           <span class="risk-pill rp-r">⚠ 매각추진</span>
         </div>
         <div class="card-loc">경기도 용인시 기흥구 마북로154번길 49 (마북동 220-1)</div>
@@ -1363,7 +1436,7 @@ gtag('config', 'G-BDWKMQ737B');
     <div class="h-card" id="card-nn" onclick="toggle('nn')">
       <div class="card-header">
         <div class="card-row">
-          <div class="card-name">독학N숲 기숙학원 <span class="seat-badge">300석</span></div>
+          <div class="card-name">독학N숲 기숙학원 <span class="seat-badge">300석</span> <span class="card-changed-badge">UPD</span></div>
           <span class="risk-pill rp-y">주의</span>
         </div>
         <div class="card-loc">경기도 남양주시 수동면 외방로135번길 12-30</div>
@@ -1616,22 +1689,42 @@ function closeMap() {
   rows.forEach(function(r) { tbody.appendChild(r); });
 })();
 
+var CHANGED_ACS = ['kolon','nn','kbiz','nas','yang'];
+
 function filterAc(id) {
+  // 업데이트 섹션 바로가기
+  if (id === 'updates') {
+    document.getElementById('updates-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return;
+  }
   document.querySelectorAll('.filter-btn').forEach(function(b) {
     b.classList.toggle('active', b.dataset.ac === id);
   });
+  var changedMode = id === 'changed';
   document.querySelectorAll('[data-group]').forEach(function(el) {
     var groups = el.dataset.group.split(',');
-    el.classList.toggle('section-hidden', id !== 'all' && groups.indexOf(id) === -1);
+    if (changedMode) {
+      el.classList.toggle('section-hidden', !groups.some(function(g){ return CHANGED_ACS.indexOf(g) !== -1; }));
+    } else {
+      el.classList.toggle('section-hidden', id !== 'all' && groups.indexOf(id) === -1);
+    }
   });
   document.querySelectorAll('.h-card[id^="card-"]').forEach(function(c) {
     var cid = c.id.replace('card-', '');
-    c.classList.toggle('section-hidden', id !== 'all' && cid !== id);
+    if (changedMode) {
+      c.classList.toggle('section-hidden', CHANGED_ACS.indexOf(cid) === -1);
+    } else {
+      c.classList.toggle('section-hidden', id !== 'all' && cid !== id);
+    }
   });
   document.querySelectorAll('.compare-table tbody tr[data-ac]').forEach(function(tr) {
-    tr.classList.toggle('section-hidden', id !== 'all' && tr.dataset.ac !== id);
+    if (changedMode) {
+      tr.classList.toggle('section-hidden', CHANGED_ACS.indexOf(tr.dataset.ac) === -1);
+    } else {
+      tr.classList.toggle('section-hidden', id !== 'all' && tr.dataset.ac !== id);
+    }
   });
-  if (id !== 'all') {
+  if (id !== 'all' && !changedMode) {
     var card = document.getElementById('card-' + id);
     if (card) setTimeout(function(){ card.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 50);
   }
